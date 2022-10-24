@@ -7,6 +7,33 @@ namespace WorldBuilder
 {
     public static class WorldBuilderUtility
     {
+        public static bool IsValidateDirectory(string directory)
+        {
+            if (!AssetDatabase.IsValidFolder(directory))
+            {
+                string[] folders = directory.Split('/');
+
+                if (folders.Length <= 1)
+                    return false;
+
+                string currentDirectory = folders[0];
+
+                for (int i = 1; i < folders.Length; i++)
+                {
+                    if (!AssetDatabase.IsValidFolder(currentDirectory + $"/{folders[i]}"))
+                    {
+                        AssetDatabase.CreateFolder(currentDirectory, folders[i]);
+                    }
+
+                    currentDirectory += $"/{folders[i]}";
+                }
+
+                AssetDatabase.Refresh();
+            }
+
+            return true;
+        }
+        
         public static T[] LoadAssets<T>() where T : Object
         {
             return LoadAssets<T>("Assets");

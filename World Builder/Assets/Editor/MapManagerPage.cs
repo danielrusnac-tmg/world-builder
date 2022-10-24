@@ -5,25 +5,6 @@ using UnityEngine;
 
 namespace WorldBuilder
 {
-    public class MapCreationWindow : EditorWindow
-    {
-        private string _mapName;
-
-        private void OnGUI()
-        {
-            GUILayout.BeginHorizontal();
-            GUILayout.Label("Map Name:");
-            _mapName = GUILayout.TextField(_mapName);
-            GUILayout.EndHorizontal();
-
-            if (GUILayout.Button("Create"))
-            {
-                MapManager.instance.CreateMap(_mapName);
-                Close();
-            }
-        }
-    }
-
     public class MapManagerPage : IWorldBuilderPage
     {
         private GUIContent[] _mapsGUi;
@@ -48,7 +29,7 @@ namespace WorldBuilder
         {
             GUILayout.BeginHorizontal(GUILayout.ExpandHeight(true));
                 GUILayout.BeginVertical("box", GUILayout.Width(200), GUILayout.ExpandHeight(true));
-                    DrawMaps();
+                    DrawMapList();
                     DrawCreateButton();
                 GUILayout.EndVertical();
                 GUILayout.BeginVertical("box", GUILayout.ExpandHeight(true));
@@ -57,7 +38,7 @@ namespace WorldBuilder
             GUILayout.EndHorizontal();
         }
 
-        private static void DrawCreateButton()
+        private void DrawCreateButton()
         {
             if (GUILayout.Button("Create Map"))
             {
@@ -67,7 +48,7 @@ namespace WorldBuilder
             }
         }
 
-        private void DrawMaps()
+        private void DrawMapList()
         {
             if (MapManager.Maps.Count == 0)
             {
@@ -90,14 +71,13 @@ namespace WorldBuilder
                 return Array.Empty<GUIContent>();
 
             return MapManager.Maps
-                .Where(map => map != null)
                 .Select(map => new GUIContent(map.Name))
                 .ToArray();
         }
 
         private void DrawSelectedMap()
         {
-            if (MapManager.SelectedMap == null)
+            if (MapManager.Maps.Count == 0)
             {
                 EditorGUILayout.HelpBox("No map selected.", MessageType.Info);
             }
