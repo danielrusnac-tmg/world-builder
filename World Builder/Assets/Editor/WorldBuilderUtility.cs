@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace WorldBuilder
 {
-    public static class WorldBuilderEditorUtility
+    public static class WorldBuilderUtility
     {
         public static T[] LoadAssets<T>() where T : Object
         {

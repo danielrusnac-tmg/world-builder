@@ -24,9 +24,22 @@ namespace WorldBuilder.Data
         public T GetOrCreateDataLayer<T>(WorldLayer layer) where T : IDataLayer
         {
             if(!_dataLayers.ContainsKey(layer))
-                _dataLayers.Add(layer, Activator.CreateInstance<T>());
+                _dataLayers.Add(layer, CreateDataLayer<T>());
             
             return _dataLayers[layer] is T ? (T)_dataLayers[layer] : default;
+        }
+
+        public void Resize(int width, int height, int length)
+        {
+            foreach (IDataLayer dataLayer in _dataLayers.Values)
+                dataLayer.Resize(width, height, length);
+        }
+
+        private T CreateDataLayer<T>() where T : IDataLayer
+        {
+            T dataLayer =  Activator.CreateInstance<T>();
+            dataLayer.Resize(Width, Height, Length);
+            return dataLayer;
         }
     }
 }
