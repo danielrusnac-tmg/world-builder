@@ -25,7 +25,7 @@ namespace WorldBuilder
             {
                 if (string.IsNullOrWhiteSpace(_mapName))
                 {
-                    EditorUtility.DisplayDialog("Failed to Create Map", "Invalid name for a map!", "Ok");
+                    UnityEditor.EditorUtility.DisplayDialog("Failed to Create Map", "Invalid name for a map!", "Ok");
                     return;
                 }
 

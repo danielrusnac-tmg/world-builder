@@ -1,7 +1,10 @@
 ﻿using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 using WorldBuilder.Data;
+#if UNITY_EDITOR
+using UnityEditor;
+using UnityEditor.SceneManagement;
+#endif
 
 namespace WorldBuilder.Rendering
 {
@@ -63,6 +66,11 @@ namespace WorldBuilder.Rendering
                     }
                 }
             }
+
+#if UNITY_EDITOR
+            if (!Application.isPlaying)
+                EditorSceneManager.MarkSceneDirty(gameObject.scene);
+#endif
         }
 
         private void DestroyInstance(GameObject instance)

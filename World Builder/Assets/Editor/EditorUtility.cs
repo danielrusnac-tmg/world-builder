@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace WorldBuilder
 {
-    public static class WorldBuilderUtility
+    public static class EditorUtility
     {
         public static bool IsValidateDirectory(string directory)
         {
