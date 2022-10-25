@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using WorldBuilder.Data;
 
@@ -16,6 +17,13 @@ namespace WorldBuilder
         public void Resize()
         {
             _data.Resize(_newSize.x, _newSize.y, _newSize.z);
+        }
+
+        private void OnDrawGizmos()
+        {
+            Bounds bounds = Layout.CalculateBounds(_data.Width, _data.Height, _data.Length);
+            Gizmos.color = new Color(1f, 0.3f, 0f, 0.16f);
+            Gizmos.DrawWireCube(bounds.center, bounds.size);
         }
     }
 }

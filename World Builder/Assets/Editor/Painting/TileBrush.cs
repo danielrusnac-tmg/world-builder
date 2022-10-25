@@ -34,6 +34,10 @@ namespace WorldBuilder.Painting
             }
 
             WorldGridByte dataLayer = data.Data.GetOrCreateDataLayer<WorldGridByte>(_layer);
+            
+            if (!data.IsErase && dataLayer.Get(data.Coordinate) == PaintID)
+                data.Coordinate.y++;
+
             dataLayer.Set(data.IsErase ? EraseID : PaintID, data.Coordinate);
         }
     }

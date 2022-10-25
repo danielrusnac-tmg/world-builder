@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using WorldBuilder.Data;
 
 namespace WorldBuilder.Rendering
@@ -8,7 +9,8 @@ namespace WorldBuilder.Rendering
     {
         [SerializeField] private WorldLayer _layer;
         [SerializeField] private World _world;
-        
+        [NonSerialized] private bool _isDirty;
+
         protected T DataLayer;
         protected World World => _world;
         protected WorldLayout Layout => _world == null ? default : _world.Layout;
@@ -23,7 +25,7 @@ namespace WorldBuilder.Rendering
                     OnDataLayerLost();
                     DataLayer = null;
                 }
-                
+
                 return;
             }
 
@@ -31,6 +33,21 @@ namespace WorldBuilder.Rendering
             OnDataLayerFound(DataLayer);
         }
 
+        public void MarkIsDirty()
+        {
+            _isDirty = true;
+        }
+
+        public void CheckIsDirty()
+        {
+            if (!_isDirty)
+                return;
+
+            OnDirtyResolve();
+            _isDirty = false;
+        }
+
+        protected virtual void OnDirtyResolve() { }
         protected abstract void OnDataLayerFound(T dataLayer);
         protected abstract void OnDataLayerLost();
     }

@@ -32,9 +32,9 @@ namespace WorldBuilder.Rendering.Autotiling
         [ContextMenu(nameof(DestroyAll))]
         private void DestroyAll()
         {
-            foreach (TileColumn tileColumn in _columns)
+            foreach (List<GameObject> instances in _instanceByCell.Values)
             {
-                foreach (GameObject instance in tileColumn.Instances)
+                foreach (GameObject instance in instances)
                 {
                     if (instance == null)
                         continue;
@@ -42,7 +42,7 @@ namespace WorldBuilder.Rendering.Autotiling
                     DestroyInstance(instance);
                 }
             }
-
+            
             _columns = Array.Empty<TileColumn>();
             _instanceByCell.Clear();
 
@@ -65,7 +65,10 @@ namespace WorldBuilder.Rendering.Autotiling
                 DataLayer.CellChanged -= OnCellChanged;
         }
 
-        private void OnCellChanged(int x, int y, int z) { }
+        private void OnCellChanged(int x, int y, int z)
+        {
+            RegenerateAll();
+        }
 
         private void GenerateAll()
         {
@@ -74,7 +77,7 @@ namespace WorldBuilder.Rendering.Autotiling
 
             Vector3 offset = Layout.CellSize * 0.5f;
             offset.y = 0f;
-            
+
             for (int x = 0; x < DataLayer.Width; x++)
             {
                 for (int y = 0; y < DataLayer.Height; y++)

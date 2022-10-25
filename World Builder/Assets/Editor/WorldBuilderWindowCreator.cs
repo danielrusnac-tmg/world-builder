@@ -1,5 +1,4 @@
 ﻿using UnityEditor;
-using WorldBuilder.Autotiling;
 using WorldBuilder.Painting;
 
 namespace WorldBuilder

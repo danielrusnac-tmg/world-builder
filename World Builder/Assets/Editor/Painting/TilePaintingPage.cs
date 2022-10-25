@@ -15,7 +15,7 @@ namespace WorldBuilder.Painting
         private bool _isDragging;
         private int _selectedPaletteIndex;
         private int _selectedBrushIndex;
-        protected Vector3Int StartDragTarget;
+        private Vector3Int _startDragTarget;
         private Vector2 _scroll;
         private LayerMask _mask;
         private World _world;
@@ -32,6 +32,7 @@ namespace WorldBuilder.Painting
 
         public void Show()
         {
+            _mask = LayerMask.GetMask("Default");
             _world = SearchWorldInCurrentScene();
             _palettes = SearchPalettesInProject();
             RefreshPaletteContent();
@@ -60,7 +61,7 @@ namespace WorldBuilder.Painting
                 _selectedPaletteIndex = newIndex;
                 RefreshPaletteContent();
             }
-            
+
             DrawPalette();
         }
 
@@ -90,7 +91,7 @@ namespace WorldBuilder.Painting
             if (e.type == EventType.MouseDown)
             {
                 _isDragging = true;
-                StartDragTarget = coordinate;
+                _startDragTarget = coordinate;
             }
 
             Action<Vector3Int> action = GetAction(e);

@@ -40,6 +40,14 @@ namespace WorldBuilder.Data
                 Mathf.RoundToInt(worldPosition.y / CellSize.y),
                 Mathf.RoundToInt(worldPosition.z / CellSize.z));
         }
+        
+        public Bounds CalculateBounds(int width, int height, int length)
+        {
+            Vector3 size = Vector3.Scale(new Vector3(width, height, length), CellSize);
+            Vector3 center = Origin + size / 2;
+            return new Bounds(center, size);
+        }
+
 
         public static WorldLayout One => new WorldLayout(Vector3.one, Vector3.zero);
     }
