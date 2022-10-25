@@ -26,18 +26,25 @@ namespace WorldBuilder.Data
             _dataLayers = new Dictionary<WorldLayer, DataLayer>();
         }
 
+        public T GetOrCreateDataLayer<T>(WorldLayer layer) where T : DataLayer
+        {
+            return HasDataLayer<T>(layer) 
+                ? GetDataLayer<T>(layer) 
+                : CreateDataLayer<T>(layer);
+        }
+
         public T CreateDataLayer<T>(WorldLayer layer) where T : DataLayer
         {
             if (layer == null)
                 return default;
-            
+
             if (_dataLayers.ContainsKey(layer))
                 _dataLayers.Remove(layer);
 
             T dataLayer = ScriptableObject.CreateInstance<T>();
             dataLayer.Resize(Width, Height, Length);
             _dataLayers.Add(layer, dataLayer);
-            
+
             return dataLayer;
         }
 
@@ -53,7 +60,7 @@ namespace WorldBuilder.Data
         {
             if (layer == null)
                 return false;
-            
+
             return _dataLayers.ContainsKey(layer) && _dataLayers[layer] is T;
         }
 

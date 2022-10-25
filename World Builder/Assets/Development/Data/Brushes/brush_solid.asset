@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed55ead08ca747f9a7a1d5cd7fd9f37f, type: 3}
   m_Name: brush_solid
   m_EditorClassIdentifier: 
-  _tileType: {fileID: 11400000, guid: 4391eecc94fd98947a16548c7f3486a8, type: 2}
+  _paintType: {fileID: 11400000, guid: 4391eecc94fd98947a16548c7f3486a8, type: 2}
+  _eraseType: {fileID: 0}
+  _layer: {fileID: 11400000, guid: 3608ba4e7cd1caf44a46b3aa04f64fa8, type: 2}
   _guiContent:
     m_Text: tile_solid
     m_Image: {fileID: 0}
