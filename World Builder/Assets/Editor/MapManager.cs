@@ -58,8 +58,8 @@ namespace WorldBuilder
         
             Maps.Add(map);
 
-            AssetDatabase.Refresh();
             AssetDatabase.SaveAssets();
+            AssetDatabase.Refresh();
             EditorUtility.SetDirty(map);
             MapsChanged?.Invoke();
 
@@ -71,31 +71,33 @@ namespace WorldBuilder
             if (Maps.Contains(map))
                 Maps.Remove(map);
 
-            Scene mapScene = GetMapScene(map);
+            SceneAsset mapScene = GetMapScene(map);
 
-            if (mapScene.IsValid())
+            if (mapScene != null)
             {
                 EditorBuildSettings.scenes = EditorBuildSettings.scenes
-                    .Where(scene => scene.path != mapScene.path)
+                    .Where(scene => scene.path != AssetDatabase.GetAssetPath(mapScene))
                     .ToArray();
-                AssetDatabase.DeleteAsset(mapScene.path);
+
+                AssetDatabase.DeleteAsset(AssetDatabase.GetAssetPath(mapScene));
             }
 
             AssetDatabase.DeleteAsset(AssetDatabase.GetAssetPath(map));
+            AssetDatabase.SaveAssets();
             AssetDatabase.Refresh();
             MapsChanged?.Invoke();
         }
 
-        private Scene GetMapScene(Map map)
+        private SceneAsset GetMapScene(Map map)
         {
-            for (var i = 0; i < SceneManager.sceneCountInBuildSettings; i++)
+            SceneAsset[] scenes = WorldBuilderUtility.LoadAssets<SceneAsset>();
+            
+            foreach (SceneAsset sceneAsset in scenes)
             {
-                Scene scene = SceneManager.GetSceneByBuildIndex(i);
-
-                if (scene.name == map.SceneName)
-                    return scene;
+                if (string.Equals(sceneAsset.name, map.SceneName))
+                    return sceneAsset;
             }
-
+            
             return default;
         }
     }
