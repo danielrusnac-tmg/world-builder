@@ -226,6 +226,7 @@ GameObject:
   m_Component:
   - component: {fileID: 752479492}
   - component: {fileID: 752479491}
+  - component: {fileID: 752479493}
   m_Layer: 0
   m_Name: world
   m_TagString: Untagged
@@ -245,12 +246,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3285a832af51d349aee04796cb8b806, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _newSize: {x: 16, y: 1, z: 16}
   _data:
-    Width: 1
+    Width: 16
     Height: 1
-    Length: 1
+    Length: 16
+    _layers:
+    - {fileID: 11400000, guid: 3608ba4e7cd1caf44a46b3aa04f64fa8, type: 2}
+    _data:
+    - {fileID: 1523715977}
   _layout:
-    CellSize: {x: 1, y: 1, z: 1}
+    CellSize: {x: 5, y: 0.75, z: 5}
     Origin: {x: 0, y: 0, z: 0}
 --- !u!4 &752479492
 Transform:
@@ -266,6 +272,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &752479493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 752479490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 186a2e4fa0884b9e8d7e47769c83a0a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _layer: {fileID: 11400000, guid: 3608ba4e7cd1caf44a46b3aa04f64fa8, type: 2}
+  _world: {fileID: 752479491}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -349,3 +369,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1523715977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d191469ec39b47669417ac3b81e0bc97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Width: 16
+  Height: 1
+  Length: 16
+  Items: 987aec723102c05029258f0f7853e8238ae41192e91a088f9c0e56511de1e7aeae530bb02a095ca1571bba09c47a8fa7da2a6565733c855bb28c9c2531dc5d2f1f913386af85a5d93778e1ec42aa288bc25ba38fc1c34ce673f9bc5fe221d84864dd65868e9d3ef9cf05163bc75eb210f8d51ad575645b7d0336e264437cc02763ae2d3a719e17443c2965f7a78bd0601574cacc5e9a1f74068df7c0c9978d29c065ecd29f7cda0b1b8800011acf51e3b0a24a732128b8ec8236c239dbbf1e7aad95e2372a6a427e93678f82662edcd5f1edbf468c6d361da954233de3687a6ebe34774e62ca541773664e921c78f712b214771ad16dba2a912a77ae1e4a073b

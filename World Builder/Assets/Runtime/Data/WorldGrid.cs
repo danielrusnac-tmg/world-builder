@@ -1,21 +1,26 @@
 using System;
+using UnityEngine;
 
 namespace WorldBuilder.Data
 {
-    [Serializable]
-    public class WorldGrid<T> : IDataLayer
+    public class WorldGrid<T> : DataLayer
     {
         public int Width;
         public int Height;
         public int Length;
         public T[] Items;
         
-        public void Resize(int width, int height, int length)
+        public override void Resize(int width, int height, int length)
         {
             Width = width;
             Height = height;
             Length = length;
             Items = new T[width * height * length];
+        }
+
+        public T Get(Vector3Int coordinate)
+        {
+            return Get(coordinate.x, coordinate.y, coordinate.z);
         }
 
         public T Get(int x, int y, int z)
@@ -24,6 +29,11 @@ namespace WorldBuilder.Data
                 return default;
             
             return Items[ArrayUtility.Flatten(x, y, z, Width, Height)];
+        }
+
+        public bool Set(T value, Vector3Int coordinate)
+        {
+            return Set(value, coordinate.x, coordinate.y, coordinate.z);
         }
 
         public bool Set(T value, int x, int y, int z)
