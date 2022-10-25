@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEditor;
-using UnityEditor.SceneManagement;
 using UnityEngine;
 using WorldBuilder.Data;
 
@@ -21,6 +20,25 @@ namespace WorldBuilder.Rendering.Autotiling
 
         private Dictionary<Vector2Int, List<GameObject>> _instanceByCell =
             new Dictionary<Vector2Int, List<GameObject>>();
+
+        private bool IsInitialized => _tileset != null && IsDataLayerValid;
+
+        private void OnEnable()
+        {
+            if (World != null)
+                World.Changed += OnWorldChanged;
+        }
+
+        private void OnDisable()
+        {
+            if (World != null)
+                World.Changed -= OnWorldChanged;
+        }
+
+        private void Start()
+        {
+            RegenerateAll();
+        }
 
         [ContextMenu(nameof(RegenerateAll))]
         private void RegenerateAll()
@@ -42,20 +60,15 @@ namespace WorldBuilder.Rendering.Autotiling
                     DestroyInstance(instance);
                 }
             }
-            
+
             _columns = Array.Empty<TileColumn>();
             _instanceByCell.Clear();
-
-#if UNITY_EDITOR
-            if (!Application.isPlaying)
-                EditorSceneManager.MarkSceneDirty(gameObject.scene);
-#endif
         }
-
-        private bool IsInitialized => _tileset != null && IsDataLayerValid;
 
         protected override void OnDataLayerFound(WorldGridByte dataLayer)
         {
+            World.Changed -= OnWorldChanged;
+            World.Changed += OnWorldChanged;
             dataLayer.CellChanged += OnCellChanged;
         }
 
@@ -63,11 +76,14 @@ namespace WorldBuilder.Rendering.Autotiling
         {
             if (DataLayer != null)
                 DataLayer.CellChanged -= OnCellChanged;
+            
+            if (World != null)
+                World.Changed -= OnWorldChanged;
         }
 
         private void OnCellChanged(int x, int y, int z)
         {
-            RegenerateAll();
+            // keep track on dirty coordinates
         }
 
         private void GenerateAll()
@@ -98,7 +114,7 @@ namespace WorldBuilder.Rendering.Autotiling
                         Quaternion rotation = Quaternion.AngleAxis(tile.Rotation * -90, Vector3.up);
 
                         GameObject instance = CreateTileInstance(tile);
-
+                        instance.hideFlags = HideFlags.HideAndDontSave;
                         Transform t = instance.transform;
                         t.SetPositionAndRotation(position, rotation);
                         t.localScale = Vector3.Scale(tile.Scale, _tileset.Scale);
@@ -108,11 +124,11 @@ namespace WorldBuilder.Rendering.Autotiling
                     }
                 }
             }
+        }
 
-#if UNITY_EDITOR
-            if (!Application.isPlaying)
-                EditorSceneManager.MarkSceneDirty(gameObject.scene);
-#endif
+        private void OnWorldChanged()
+        {
+            RegenerateAll();
         }
 
         private GameObject CreateTileInstance(Tile tile)

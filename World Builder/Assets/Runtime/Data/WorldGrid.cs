@@ -5,13 +5,13 @@ namespace WorldBuilder.Data
 {
     public class WorldGrid<T> : DataLayer
     {
-        public event Action<int, int, int> CellChanged; 
+        public event Action<int, int, int> CellChanged;
 
         public int Width;
         public int Height;
         public int Length;
         public T[] Items;
-        
+
         public override void Resize(int width, int height, int length)
         {
             Width = width;
@@ -29,7 +29,7 @@ namespace WorldBuilder.Data
         {
             if (!IsValidCoordinate(x, y, z))
                 return default;
-            
+
             return Items[ArrayUtility.Flatten(x, y, z, Width, Height)];
         }
 
@@ -45,7 +45,8 @@ namespace WorldBuilder.Data
 
             Items[ArrayUtility.Flatten(x, y, z, Width, Height)] = value;
             CellChanged?.Invoke(x, y, z);
-            
+            OnChanged();
+
             return true;
         }
 
