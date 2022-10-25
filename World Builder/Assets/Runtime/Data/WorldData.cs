@@ -132,7 +132,6 @@ namespace WorldBuilder.Data
 
         private void OnChanged()
         {
-            Debug.Log("World Data Changed");
             Changed?.Invoke();
         }
     }

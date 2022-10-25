@@ -44,8 +44,6 @@ namespace WorldBuilder
 
         private void OnDataChanged()
         {
-            Debug.Log("World Changed");
-            
 #if UNITY_EDITOR
             EditorSceneManager.MarkSceneDirty(gameObject.scene);
 #endif
