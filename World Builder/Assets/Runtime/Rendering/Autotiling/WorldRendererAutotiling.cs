@@ -15,20 +15,20 @@ namespace WorldBuilder.Rendering.Autotiling
             public Vector2Int Tile;
             public List<GameObject> Instances;
         }
-        
+
         [SerializeField] private Tileset _tileset;
         [SerializeField] [HideInInspector] private TileColumn[] _columns = Array.Empty<TileColumn>();
-        
+
         private Dictionary<Vector2Int, List<GameObject>> _instanceByCell =
             new Dictionary<Vector2Int, List<GameObject>>();
-        
+
         [ContextMenu(nameof(RegenerateAll))]
         private void RegenerateAll()
         {
             DestroyAll();
             GenerateAll();
         }
-        
+
         [ContextMenu(nameof(DestroyAll))]
         private void DestroyAll()
         {
@@ -38,7 +38,7 @@ namespace WorldBuilder.Rendering.Autotiling
                 {
                     if (instance == null)
                         continue;
-                    
+
                     DestroyInstance(instance);
                 }
             }
@@ -51,9 +51,9 @@ namespace WorldBuilder.Rendering.Autotiling
                 EditorSceneManager.MarkSceneDirty(gameObject.scene);
 #endif
         }
-        
+
         private bool IsInitialized => _tileset != null && IsDataLayerValid;
-        
+
         protected override void OnDataLayerFound(WorldGridByte dataLayer)
         {
             dataLayer.CellChanged += OnCellChanged;
@@ -65,15 +65,16 @@ namespace WorldBuilder.Rendering.Autotiling
                 DataLayer.CellChanged -= OnCellChanged;
         }
 
-        private void OnCellChanged(int x, int y, int z)
-        {
-        }
+        private void OnCellChanged(int x, int y, int z) { }
 
         private void GenerateAll()
         {
             if (!IsInitialized)
                 return;
 
+            Vector3 offset = Layout.CellSize * 0.5f;
+            offset.y = 0f;
+            
             for (int x = 0; x < DataLayer.Width; x++)
             {
                 for (int y = 0; y < DataLayer.Height; y++)
@@ -81,16 +82,16 @@ namespace WorldBuilder.Rendering.Autotiling
                     for (int z = 0; z < DataLayer.Length; z++)
                     {
                         Vector2Int columnIndex = new Vector2Int(x, z);
-                        
+
                         if (!_instanceByCell.ContainsKey(columnIndex))
                             _instanceByCell.Add(columnIndex, new List<GameObject>());
-                        
+
                         int tileIndex = ComputeIndex(x, y, z);
-                        
+
                         if (!_tileset.TryGetTile(tileIndex, out Tile tile))
                             continue;
-                        
-                        Vector3 position = Layout.WorldPosition(x, y, z);
+
+                        Vector3 position = Layout.WorldPosition(x, y, z) + offset;
                         Quaternion rotation = Quaternion.AngleAxis(tile.Rotation * -90, Vector3.up);
 
                         GameObject instance = CreateTileInstance(tile);
