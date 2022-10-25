@@ -11,29 +11,31 @@ namespace WorldBuilder
         private IWorldBuilderPage[] _pages;
 
         private IWorldBuilderPage SelectedPage => _pages[_selectedPageIndex];
-
-        [MenuItem("World Builder/Editor")]
-        private static void ShowWindow()
+        
+        public static void ShowWindow(params IWorldBuilderPage[] pages)
         {
             WorldBuilderWindow window = GetWindow<WorldBuilderWindow>();
             window.titleContent = new GUIContent("World Builder");
+            window.SetPages(pages);
             window.Show();
         }
 
+        public void SetPages(params IWorldBuilderPage[] pages)
+        {
+            SelectedPage?.Hide();
+            _pages = pages;
+            _pagesGUI = _pages.Select(page => new GUIContent(page.Name)).ToArray();
+            SelectedPage?.Show();
+        }
+        
         private void OnEnable()
         {
-            _pages = new IWorldBuilderPage[]
-            {
-                new MapManagerPage()
-            };
-
-            _pagesGUI = _pages.Select(page => new GUIContent(page.Name)).ToArray();
-            SelectedPage.Show();
+            SelectedPage?.Show();
         }
 
         private void OnDisable()
         {
-            SelectedPage.Hide();
+            SelectedPage?.Hide();
         }
 
         private void OnGUI()

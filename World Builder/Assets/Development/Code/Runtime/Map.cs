@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace WorldBuilder
+namespace WorldBuilder.Data
 {
     [CreateAssetMenu(menuName = "World Builder/Map", fileName = "map_")]
     public class Map : ScriptableObject

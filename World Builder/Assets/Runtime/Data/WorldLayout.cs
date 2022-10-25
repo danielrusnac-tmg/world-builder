@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace WorldBuilder
+namespace WorldBuilder.Data
 {
     [Serializable]
     public struct WorldLayout

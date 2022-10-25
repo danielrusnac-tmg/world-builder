@@ -5,6 +5,8 @@ namespace WorldBuilder.Data
 {
     public class WorldGrid<T> : DataLayer
     {
+        public event Action<int, int, int> CellChanged; 
+
         public int Width;
         public int Height;
         public int Length;
@@ -42,6 +44,7 @@ namespace WorldBuilder.Data
                 return false;
 
             Items[ArrayUtility.Flatten(x, y, z, Width, Height)] = value;
+            CellChanged?.Invoke(x, y, z);
             
             return true;
         }

@@ -28,6 +28,9 @@ namespace WorldBuilder.Data
 
         public T CreateDataLayer<T>(WorldLayer layer) where T : DataLayer
         {
+            if (layer == null)
+                return default;
+            
             if (_dataLayers.ContainsKey(layer))
                 _dataLayers.Remove(layer);
 
@@ -40,7 +43,7 @@ namespace WorldBuilder.Data
 
         public T GetDataLayer<T>(WorldLayer layer) where T : DataLayer
         {
-            if (HasDataLayer<T>(layer))
+            if (layer != null && HasDataLayer<T>(layer))
                 return _dataLayers[layer] as T;
 
             return default;
@@ -48,6 +51,9 @@ namespace WorldBuilder.Data
 
         public bool HasDataLayer<T>(WorldLayer layer) where T : DataLayer
         {
+            if (layer == null)
+                return false;
+            
             return _dataLayers.ContainsKey(layer) && _dataLayers[layer] is T;
         }
 
