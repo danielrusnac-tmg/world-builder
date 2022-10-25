@@ -42,27 +42,37 @@ namespace WorldBuilder
 
         public Map CreateMap(string mapName)
         {
-            string mapNameSnakeCase = $"map_{mapName.ToLowerInvariant().Replace(' ', '_')}";
+            string mapAssetName = $"map_{mapName.ToLowerInvariant().Replace(' ', '_')}";
             
+            CreateMapScene(mapAssetName);
+            Map map = CreateMapAsset(mapName, mapAssetName);
+            Maps.Add(map);
+
+            AssetDatabase.Refresh();
+            EditorUtility.SetDirty(map);
+            
+            MapsChanged?.Invoke();
+
+            return map;
+        }
+
+        private Map CreateMapAsset(string mapName, string mapNameSnakeCase)
+        {
+            Map map = CreateInstance<Map>();
+            map.Name = mapName;
+            map.SceneName = mapNameSnakeCase;
+            AssetDatabase.CreateAsset(map, $"{MapsDirectory}/{mapNameSnakeCase}.asset");
+            return map;
+        }
+
+        private void CreateMapScene(string mapNameSnakeCase)
+        {
             Scene mapScene = EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, NewSceneMode.Single);
             mapScene.name = mapNameSnakeCase;
             EditorSceneManager.SaveScene(mapScene, ScenesDirectory + $"/{mapNameSnakeCase}.unity");
             EditorBuildSettings.scenes = EditorBuildSettings.scenes
                 .Append(new EditorBuildSettingsScene(mapScene.path, true))
                 .ToArray();
-
-            Map map = CreateInstance<Map>();
-            map.Name = mapName;
-            map.SceneName = mapNameSnakeCase;
-            AssetDatabase.CreateAsset(map, $"{MapsDirectory}/{mapNameSnakeCase}.asset");
-        
-            Maps.Add(map);
-
-            AssetDatabase.Refresh();
-            EditorUtility.SetDirty(map);
-            MapsChanged?.Invoke();
-
-            return map;
         }
 
         public void DeleteMap(Map map)
@@ -70,6 +80,15 @@ namespace WorldBuilder
             if (Maps.Contains(map))
                 Maps.Remove(map);
 
+            DeleteMapScene(map);
+            AssetDatabase.DeleteAsset(AssetDatabase.GetAssetPath(map));
+            AssetDatabase.Refresh();
+            
+            MapsChanged?.Invoke();
+        }
+
+        private void DeleteMapScene(Map map)
+        {
             SceneAsset mapScene = GetMapScene(map);
 
             if (mapScene != null)
@@ -80,10 +99,6 @@ namespace WorldBuilder
 
                 AssetDatabase.DeleteAsset(AssetDatabase.GetAssetPath(mapScene));
             }
-
-            AssetDatabase.DeleteAsset(AssetDatabase.GetAssetPath(map));
-            AssetDatabase.Refresh();
-            MapsChanged?.Invoke();
         }
 
         private SceneAsset GetMapScene(Map map)
