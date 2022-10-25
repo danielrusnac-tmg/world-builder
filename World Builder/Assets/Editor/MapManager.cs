@@ -58,7 +58,6 @@ namespace WorldBuilder
         
             Maps.Add(map);
 
-            AssetDatabase.SaveAssets();
             AssetDatabase.Refresh();
             EditorUtility.SetDirty(map);
             MapsChanged?.Invoke();
@@ -83,7 +82,6 @@ namespace WorldBuilder
             }
 
             AssetDatabase.DeleteAsset(AssetDatabase.GetAssetPath(map));
-            AssetDatabase.SaveAssets();
             AssetDatabase.Refresh();
             MapsChanged?.Invoke();
         }
