@@ -10,7 +10,9 @@ namespace WorldBuilder
         private GUIContent[] _pagesGUI;
         private IWorldBuilderPage[] _pages;
 
-        private IWorldBuilderPage SelectedPage => _pages[_selectedPageIndex];
+        private IWorldBuilderPage SelectedPage => _pages == null || _pages.Length == 0 
+            ? null 
+            : _pages[_selectedPageIndex];
         
         public static void ShowWindow(params IWorldBuilderPage[] pages)
         {

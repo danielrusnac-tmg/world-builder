@@ -2,6 +2,6 @@
 
 namespace WorldBuilder.Data
 {
-    [CreateAssetMenu(menuName = "World Builder/Layer", fileName = "layer_")]
+    [CreateAssetMenu(menuName = CreatePath.DATA + "Layer", fileName = "layer_")]
     public class WorldLayer : ScriptableObject { }
 }

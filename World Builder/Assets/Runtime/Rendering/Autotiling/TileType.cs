@@ -2,7 +2,7 @@
 
 namespace WorldBuilder.Rendering.Autotiling
 {
-    [CreateAssetMenu(menuName = "World Builder/Autotiling/Tile Type", fileName = "tile_")]
+    [CreateAssetMenu(menuName = CreatePath.AUTOTILING + "Tile Type", fileName = "tile_")]
     public class TileType : ScriptableObject
     {
         [SerializeField] private byte _id;

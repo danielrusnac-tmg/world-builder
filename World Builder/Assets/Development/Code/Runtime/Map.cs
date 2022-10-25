@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 namespace WorldBuilder.Data
 {
-    [CreateAssetMenu(menuName = "World Builder/Map", fileName = "map_")]
+    // [CreateAssetMenu(menuName = "World Builder/Map", fileName = "map_")]
     public class Map : ScriptableObject
     {
         public string Name;

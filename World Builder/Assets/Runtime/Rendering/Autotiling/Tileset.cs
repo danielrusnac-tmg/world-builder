@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace WorldBuilder.Rendering.Autotiling
 {
-    [CreateAssetMenu(menuName = "World Builder/Autotiling/Tileset", fileName = "tileset_")]
+    [CreateAssetMenu(menuName = CreatePath.AUTOTILING + "Tileset", fileName = "tileset_")]
     public class Tileset : ScriptableObject
     {
         [SerializeField] private Vector3 _scale = Vector3.one;
