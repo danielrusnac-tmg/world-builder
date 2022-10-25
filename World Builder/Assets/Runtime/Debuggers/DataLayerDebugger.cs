@@ -9,7 +9,7 @@ namespace WorldBuilder.Debuggers
         [SerializeField] private World _world;
         
         private T _dataLayer;
-        protected bool IsDataLayerValid => _dataLayer != null;
+        private bool IsDataLayerValid => _dataLayer != null;
         
         protected virtual void OnValidate()
         {

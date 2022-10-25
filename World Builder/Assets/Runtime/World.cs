@@ -1,6 +1,7 @@
 using UnityEngine;
+using WorldBuilder.Data;
 
-namespace WorldBuilder.Data
+namespace WorldBuilder
 {
     public class World : MonoBehaviour
     {
