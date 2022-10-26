@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
+using WorldBuilder.Autotiling;
 using WorldBuilder.Data;
-using WorldBuilder.Rendering.Autotiling;
 
 namespace WorldBuilder.Painting
 {

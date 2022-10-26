@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using WorldBuilder.Rendering.Autotiling;
+using WorldBuilder.Autotiling;
 
 namespace WorldBuilder.Debuggers
 {

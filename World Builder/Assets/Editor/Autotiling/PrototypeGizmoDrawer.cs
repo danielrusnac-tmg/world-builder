@@ -1,7 +1,6 @@
 ﻿using System;
 using UnityEditor;
 using UnityEngine;
-using WorldBuilder.Rendering.Autotiling;
 
 namespace WorldBuilder.Autotiling
 {

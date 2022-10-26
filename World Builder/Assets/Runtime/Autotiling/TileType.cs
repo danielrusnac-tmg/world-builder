@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace WorldBuilder.Rendering.Autotiling
+namespace WorldBuilder.Autotiling
 {
     [CreateAssetMenu(menuName = CreatePath.AUTOTILING + "Tile Type", fileName = "tile_")]
     public class TileType : ScriptableObject

@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using WorldBuilder.Autotiling;
 using WorldBuilder.Data;
 
-namespace WorldBuilder.Rendering.Autotiling
+namespace WorldBuilder.Rendering
 {
     public class WorldRendererAutotiling : WorldRenderer<WorldGridByte>, IAutotileMap
     {

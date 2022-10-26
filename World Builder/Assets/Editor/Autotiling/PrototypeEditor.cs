@@ -1,5 +1,4 @@
 ﻿using UnityEditor;
-using WorldBuilder.Rendering.Autotiling;
 
 namespace WorldBuilder.Autotiling
 {

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using WorldBuilder.Data;
 
-namespace WorldBuilder.Rendering.Autotiling
+namespace WorldBuilder.Autotiling
 {
     public class GridRandomValueSetter : MonoBehaviour
     {

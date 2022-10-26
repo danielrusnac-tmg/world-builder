@@ -1,4 +1,4 @@
-﻿namespace WorldBuilder.Rendering.Autotiling
+﻿namespace WorldBuilder.Autotiling
 {
     public enum Symmetry
     {
