@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: brush_grass
   m_EditorClassIdentifier: 
   _paintType: {fileID: 11400000, guid: 21654484ae3b95444a8aecf005f32815, type: 2}
-  _eraseType: {fileID: 0}
+  _eraseType: {fileID: 11400000, guid: b6c04fc8e659ce54abd18ae9326801a0, type: 2}
   _layer: {fileID: 11400000, guid: 3608ba4e7cd1caf44a46b3aa04f64fa8, type: 2}
   _fillHeight: 1
   _guiContent:

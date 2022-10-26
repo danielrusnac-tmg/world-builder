@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _paintType: {fileID: 11400000, guid: 045a9502b38928845a3e9c6993cf686e, type: 2}
   _eraseType: {fileID: 0}
-  _layer: {fileID: 11400000, guid: ab0daf0ddf4e72b4dabb09be313241cb, type: 2}
+  _layer: {fileID: 11400000, guid: ffcfc44fde2f8c241b579bb1022457e3, type: 2}
   _fillHeight: 1
   _guiContent:
     m_Text: tile_5_bridge

@@ -9,10 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f689f7c8f3b48aaa1ee683a4ceaf228, type: 3}
-  m_Name: page_tiles
+  m_Script: {fileID: 11500000, guid: 4815de291c2c4528a4ef427eab5412e9, type: 3}
+  m_Name: layer_bridge
   m_EditorClassIdentifier: 
-  _title: Tiles
-  _mask:
-    serializedVersion: 2
-    m_Bits: 0

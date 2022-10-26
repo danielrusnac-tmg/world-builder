@@ -169,20 +169,18 @@ namespace WorldBuilder.Painting
         {
             Event e = Event.current;
             Ray ray = HandleUtility.GUIPointToWorldRay(e.mousePosition);
-            var offset = new Vector3(0f, layout.CellSize.y * 0.5f, 0f);
-
             if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, mask))
             {
-                coordinate = layout.CoordinateAsVector(hit.point - hit.normal * 0.1f);
+                coordinate = layout.CoordinateAsVector(hit.point - hit.normal * 0.01f);
                 point = hit.point;
                 normal = hit.normal;
             }
             else
             {
-                Plane bottomPlane = new Plane(Vector3.down, new Vector3(0f, layout.CellSize.y * 0.5f, 0f));
+                Plane bottomPlane = new Plane(Vector3.down, new Vector3(0f, layout.Origin.y + layout.CellSize.y * 0.5f, 0f));
                 bottomPlane.Raycast(ray, out float enterBot);
                 coordinate = layout.CoordinateAsVector(ray.GetPoint(enterBot));
-                point = ray.GetPoint(enterBot) + offset;
+                point = ray.GetPoint(enterBot);
                 normal = Vector3.up;
             }
         }
