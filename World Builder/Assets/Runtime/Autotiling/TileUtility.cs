@@ -6,24 +6,9 @@ namespace WorldBuilder.Autotiling
 {
     public static class TileUtility
     {
-        // Axis
-        //
-        //    Y  Z 
-        //    |/
-        //    O---X 
-        //
-        // Corners
-        //
-        //     5--------6
-        //    /|       /|
-        //   4--------7 |    
-        //   | 1------|-2    
-        //   |/       |/     
-        //   0--------3      
-        //
-
         public static readonly Vector3[] CORNER_DIRECTIONS;
-        public static readonly Vector3Int[] TILE_INDEX_OFFSETS;
+        
+        private static readonly Vector3Int[] TILE_INDEX_OFFSETS;
 
         public static readonly Vector3Int[] TILE_NEIGHBORS = new[]
         {
@@ -52,7 +37,7 @@ namespace WorldBuilder.Autotiling
             };
         }
 
-        public static int ComputeID(Prototype prototype, Symmetry symmetry, int rotation)
+        private static int ComputeID(Prototype prototype, Symmetry symmetry, int rotation)
         {
             int[] index = GetSymmetryCorners(symmetry);
 
@@ -64,7 +49,7 @@ namespace WorldBuilder.Autotiling
             );
         }
 
-        public static Vector3Int GetSymmetryScale(Symmetry symmetry, int rotation)
+        private static Vector3Int GetSymmetryScale(Symmetry symmetry, int rotation)
         {
             switch (symmetry)
             {
@@ -83,7 +68,7 @@ namespace WorldBuilder.Autotiling
             return Vector3Int.one;
         }
 
-        public static int[] GetSymmetryCorners(Symmetry symmetry)
+        private static int[] GetSymmetryCorners(Symmetry symmetry)
         {
             switch (symmetry)
             {
@@ -126,7 +111,7 @@ namespace WorldBuilder.Autotiling
             return tileByID.Values.ToArray();
         }
 
-        public static Tile CreateTile(Prototype prototype, int rotation, Symmetry symmetry)
+        private static Tile CreateTile(Prototype prototype, int rotation, Symmetry symmetry)
         {
             int id = ComputeID(prototype, symmetry, rotation);
 
@@ -140,9 +125,12 @@ namespace WorldBuilder.Autotiling
             };
         }
 
-        public static bool AreNeighbors(Vector2Int a, Vector2Int b)
+        private enum Symmetry
         {
-            return Mathf.Abs(a.x - b.x) <= 1 && Mathf.Abs(a.y - b.y) <= 1;
+            None = 0,
+            MirrorX = 1,
+            MirrorZ = 2,
+            MirrorXZ = 3
         }
     }
 }
