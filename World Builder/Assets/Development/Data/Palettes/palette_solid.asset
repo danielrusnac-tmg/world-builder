@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 190eee4999383c3498bc6f059f96ef9c, type: 3}
   m_Name: palette_solid
   m_EditorClassIdentifier: 
-  _name: Solid
-  _descriptions: 
+  _name: Placeholder
+  _descriptions: A basic autotiling brush
   _brushes:
   - {fileID: 11400000, guid: 5e14e66643dbb784aabd8afcaea9f222, type: 2}
   - {fileID: 11400000, guid: 2d48fc157fd256744b0d9be6d7d028e7, type: 2}
-  - {fileID: 11400000, guid: 1671ee0c93a6bfb43bbf541098b68936, type: 2}

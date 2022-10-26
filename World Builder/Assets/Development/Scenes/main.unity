@@ -149,6 +149,7 @@ GameObject:
   m_Component:
   - component: {fileID: 674091847}
   - component: {fileID: 674091846}
+  - component: {fileID: 674091848}
   m_Layer: 0
   m_Name: renderer_terrain
   m_TagString: Untagged
@@ -170,622 +171,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _layer: {fileID: 11400000, guid: 3608ba4e7cd1caf44a46b3aa04f64fa8, type: 2}
   _world: {fileID: 752479491}
-  _tileset: {fileID: 11400000, guid: c6bbb5b81031c3f42b3419a58f56387c, type: 2}
-  _columns:
-  - Tile: {x: 0, y: 0}
-    Instances: []
-  - Tile: {x: 0, y: 1}
-    Instances: []
-  - Tile: {x: 0, y: 2}
-    Instances: []
-  - Tile: {x: 0, y: 3}
-    Instances: []
-  - Tile: {x: 0, y: 4}
-    Instances: []
-  - Tile: {x: 0, y: 5}
-    Instances: []
-  - Tile: {x: 0, y: 6}
-    Instances: []
-  - Tile: {x: 0, y: 7}
-    Instances: []
-  - Tile: {x: 0, y: 8}
-    Instances: []
-  - Tile: {x: 0, y: 9}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 0, y: 10}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 0, y: 11}
-    Instances: []
-  - Tile: {x: 0, y: 12}
-    Instances: []
-  - Tile: {x: 0, y: 13}
-    Instances: []
-  - Tile: {x: 0, y: 14}
-    Instances: []
-  - Tile: {x: 0, y: 15}
-    Instances: []
-  - Tile: {x: 1, y: 0}
-    Instances: []
-  - Tile: {x: 1, y: 1}
-    Instances: []
-  - Tile: {x: 1, y: 2}
-    Instances: []
-  - Tile: {x: 1, y: 3}
-    Instances: []
-  - Tile: {x: 1, y: 4}
-    Instances: []
-  - Tile: {x: 1, y: 5}
-    Instances: []
-  - Tile: {x: 1, y: 6}
-    Instances: []
-  - Tile: {x: 1, y: 7}
-    Instances: []
-  - Tile: {x: 1, y: 8}
-    Instances: []
-  - Tile: {x: 1, y: 9}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 1, y: 10}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 1, y: 11}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 1, y: 12}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 1, y: 13}
-    Instances: []
-  - Tile: {x: 1, y: 14}
-    Instances: []
-  - Tile: {x: 1, y: 15}
-    Instances: []
-  - Tile: {x: 2, y: 0}
-    Instances: []
-  - Tile: {x: 2, y: 1}
-    Instances: []
-  - Tile: {x: 2, y: 2}
-    Instances: []
-  - Tile: {x: 2, y: 3}
-    Instances: []
-  - Tile: {x: 2, y: 4}
-    Instances: []
-  - Tile: {x: 2, y: 5}
-    Instances: []
-  - Tile: {x: 2, y: 6}
-    Instances: []
-  - Tile: {x: 2, y: 7}
-    Instances: []
-  - Tile: {x: 2, y: 8}
-    Instances: []
-  - Tile: {x: 2, y: 9}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 2, y: 10}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 2, y: 11}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 2, y: 12}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 2, y: 13}
-    Instances: []
-  - Tile: {x: 2, y: 14}
-    Instances: []
-  - Tile: {x: 2, y: 15}
-    Instances: []
-  - Tile: {x: 3, y: 0}
-    Instances: []
-  - Tile: {x: 3, y: 1}
-    Instances: []
-  - Tile: {x: 3, y: 2}
-    Instances: []
-  - Tile: {x: 3, y: 3}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 3, y: 4}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 3, y: 5}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 3, y: 6}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 3, y: 7}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 3, y: 8}
-    Instances: []
-  - Tile: {x: 3, y: 9}
-    Instances: []
-  - Tile: {x: 3, y: 10}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 3, y: 11}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 3, y: 12}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 3, y: 13}
-    Instances: []
-  - Tile: {x: 3, y: 14}
-    Instances: []
-  - Tile: {x: 3, y: 15}
-    Instances: []
-  - Tile: {x: 4, y: 0}
-    Instances: []
-  - Tile: {x: 4, y: 1}
-    Instances: []
-  - Tile: {x: 4, y: 2}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 4, y: 3}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 4, y: 4}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 4, y: 5}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 4, y: 6}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 4, y: 7}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 4, y: 8}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 4, y: 9}
-    Instances: []
-  - Tile: {x: 4, y: 10}
-    Instances: []
-  - Tile: {x: 4, y: 11}
-    Instances: []
-  - Tile: {x: 4, y: 12}
-    Instances: []
-  - Tile: {x: 4, y: 13}
-    Instances: []
-  - Tile: {x: 4, y: 14}
-    Instances: []
-  - Tile: {x: 4, y: 15}
-    Instances: []
-  - Tile: {x: 5, y: 0}
-    Instances: []
-  - Tile: {x: 5, y: 1}
-    Instances: []
-  - Tile: {x: 5, y: 2}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 5, y: 3}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 5, y: 4}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 5, y: 5}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 5, y: 6}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 5, y: 7}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 5, y: 8}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 5, y: 9}
-    Instances: []
-  - Tile: {x: 5, y: 10}
-    Instances: []
-  - Tile: {x: 5, y: 11}
-    Instances: []
-  - Tile: {x: 5, y: 12}
-    Instances: []
-  - Tile: {x: 5, y: 13}
-    Instances: []
-  - Tile: {x: 5, y: 14}
-    Instances: []
-  - Tile: {x: 5, y: 15}
-    Instances: []
-  - Tile: {x: 6, y: 0}
-    Instances: []
-  - Tile: {x: 6, y: 1}
-    Instances: []
-  - Tile: {x: 6, y: 2}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 6, y: 3}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 6, y: 4}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 6, y: 5}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 6, y: 6}
-    Instances: []
-  - Tile: {x: 6, y: 7}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 6, y: 8}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 6, y: 9}
-    Instances: []
-  - Tile: {x: 6, y: 10}
-    Instances: []
-  - Tile: {x: 6, y: 11}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 6, y: 12}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 6, y: 13}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 6, y: 14}
-    Instances: []
-  - Tile: {x: 6, y: 15}
-    Instances: []
-  - Tile: {x: 7, y: 0}
-    Instances: []
-  - Tile: {x: 7, y: 1}
-    Instances: []
-  - Tile: {x: 7, y: 2}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 7, y: 3}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 7, y: 4}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 7, y: 5}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 7, y: 6}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 7, y: 7}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 7, y: 8}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 7, y: 9}
-    Instances: []
-  - Tile: {x: 7, y: 10}
-    Instances: []
-  - Tile: {x: 7, y: 11}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 7, y: 12}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 7, y: 13}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 7, y: 14}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 7, y: 15}
-    Instances: []
-  - Tile: {x: 8, y: 0}
-    Instances: []
-  - Tile: {x: 8, y: 1}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 8, y: 2}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 8, y: 3}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 8, y: 4}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 8, y: 5}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 8, y: 6}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 8, y: 7}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 8, y: 8}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 8, y: 9}
-    Instances: []
-  - Tile: {x: 8, y: 10}
-    Instances: []
-  - Tile: {x: 8, y: 11}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 8, y: 12}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 8, y: 13}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 8, y: 14}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 8, y: 15}
-    Instances: []
-  - Tile: {x: 9, y: 0}
-    Instances: []
-  - Tile: {x: 9, y: 1}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 9, y: 2}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 9, y: 3}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 9, y: 4}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 9, y: 5}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 9, y: 6}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 9, y: 7}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 9, y: 8}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 9, y: 9}
-    Instances: []
-  - Tile: {x: 9, y: 10}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 9, y: 11}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 9, y: 12}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 9, y: 13}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 9, y: 14}
-    Instances: []
-  - Tile: {x: 9, y: 15}
-    Instances: []
-  - Tile: {x: 10, y: 0}
-    Instances: []
-  - Tile: {x: 10, y: 1}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 10, y: 2}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 10, y: 3}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 10, y: 4}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 10, y: 5}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 10, y: 6}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 10, y: 7}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 10, y: 8}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 10, y: 9}
-    Instances: []
-  - Tile: {x: 10, y: 10}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 10, y: 11}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 10, y: 12}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 10, y: 13}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 10, y: 14}
-    Instances: []
-  - Tile: {x: 10, y: 15}
-    Instances: []
-  - Tile: {x: 11, y: 0}
-    Instances: []
-  - Tile: {x: 11, y: 1}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 11, y: 2}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 11, y: 3}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 11, y: 4}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 11, y: 5}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 11, y: 6}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 11, y: 7}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 11, y: 8}
-    Instances: []
-  - Tile: {x: 11, y: 9}
-    Instances: []
-  - Tile: {x: 11, y: 10}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 11, y: 11}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 11, y: 12}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 11, y: 13}
-    Instances: []
-  - Tile: {x: 11, y: 14}
-    Instances: []
-  - Tile: {x: 11, y: 15}
-    Instances: []
-  - Tile: {x: 12, y: 0}
-    Instances: []
-  - Tile: {x: 12, y: 1}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 12, y: 2}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 12, y: 3}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 12, y: 4}
-    Instances:
-    - {fileID: 0}
-  - Tile: {x: 12, y: 5}
-    Instances: []
-  - Tile: {x: 12, y: 6}
-    Instances: []
-  - Tile: {x: 12, y: 7}
-    Instances: []
-  - Tile: {x: 12, y: 8}
-    Instances: []
-  - Tile: {x: 12, y: 9}
-    Instances: []
-  - Tile: {x: 12, y: 10}
-    Instances: []
-  - Tile: {x: 12, y: 11}
-    Instances: []
-  - Tile: {x: 12, y: 12}
-    Instances: []
-  - Tile: {x: 12, y: 13}
-    Instances: []
-  - Tile: {x: 12, y: 14}
-    Instances: []
-  - Tile: {x: 12, y: 15}
-    Instances: []
-  - Tile: {x: 13, y: 0}
-    Instances: []
-  - Tile: {x: 13, y: 1}
-    Instances: []
-  - Tile: {x: 13, y: 2}
-    Instances: []
-  - Tile: {x: 13, y: 3}
-    Instances: []
-  - Tile: {x: 13, y: 4}
-    Instances: []
-  - Tile: {x: 13, y: 5}
-    Instances: []
-  - Tile: {x: 13, y: 6}
-    Instances: []
-  - Tile: {x: 13, y: 7}
-    Instances: []
-  - Tile: {x: 13, y: 8}
-    Instances: []
-  - Tile: {x: 13, y: 9}
-    Instances: []
-  - Tile: {x: 13, y: 10}
-    Instances: []
-  - Tile: {x: 13, y: 11}
-    Instances: []
-  - Tile: {x: 13, y: 12}
-    Instances: []
-  - Tile: {x: 13, y: 13}
-    Instances: []
-  - Tile: {x: 13, y: 14}
-    Instances: []
-  - Tile: {x: 13, y: 15}
-    Instances: []
-  - Tile: {x: 14, y: 0}
-    Instances: []
-  - Tile: {x: 14, y: 1}
-    Instances: []
-  - Tile: {x: 14, y: 2}
-    Instances: []
-  - Tile: {x: 14, y: 3}
-    Instances: []
-  - Tile: {x: 14, y: 4}
-    Instances: []
-  - Tile: {x: 14, y: 5}
-    Instances: []
-  - Tile: {x: 14, y: 6}
-    Instances: []
-  - Tile: {x: 14, y: 7}
-    Instances: []
-  - Tile: {x: 14, y: 8}
-    Instances: []
-  - Tile: {x: 14, y: 9}
-    Instances: []
-  - Tile: {x: 14, y: 10}
-    Instances: []
-  - Tile: {x: 14, y: 11}
-    Instances: []
-  - Tile: {x: 14, y: 12}
-    Instances: []
-  - Tile: {x: 14, y: 13}
-    Instances: []
-  - Tile: {x: 14, y: 14}
-    Instances: []
-  - Tile: {x: 14, y: 15}
-    Instances: []
-  - Tile: {x: 15, y: 0}
-    Instances: []
-  - Tile: {x: 15, y: 1}
-    Instances: []
-  - Tile: {x: 15, y: 2}
-    Instances: []
-  - Tile: {x: 15, y: 3}
-    Instances: []
-  - Tile: {x: 15, y: 4}
-    Instances: []
-  - Tile: {x: 15, y: 5}
-    Instances: []
-  - Tile: {x: 15, y: 6}
-    Instances: []
-  - Tile: {x: 15, y: 7}
-    Instances: []
-  - Tile: {x: 15, y: 8}
-    Instances: []
-  - Tile: {x: 15, y: 9}
-    Instances: []
-  - Tile: {x: 15, y: 10}
-    Instances: []
-  - Tile: {x: 15, y: 11}
-    Instances: []
-  - Tile: {x: 15, y: 12}
-    Instances: []
-  - Tile: {x: 15, y: 13}
-    Instances: []
-  - Tile: {x: 15, y: 14}
-    Instances: []
-  - Tile: {x: 15, y: 15}
-    Instances: []
+  _generator: {fileID: 674091848}
 --- !u!4 &674091847
 Transform:
   m_ObjectHideFlags: 0
@@ -800,6 +186,185 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &674091848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 674091845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 870a79295acd4f4f99c4e334d82f1832, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tileset: {fileID: 11400000, guid: c6bbb5b81031c3f42b3419a58f56387c, type: 2}
+  _coordinates:
+  - {x: 1, y: 0, z: 9}
+  - {x: 1, y: 0, z: 10}
+  - {x: 2, y: 0, z: 9}
+  - {x: 2, y: 0, z: 10}
+  - {x: 2, y: 0, z: 11}
+  - {x: 3, y: 0, z: 5}
+  - {x: 3, y: 0, z: 6}
+  - {x: 3, y: 0, z: 7}
+  - {x: 3, y: 0, z: 9}
+  - {x: 3, y: 0, z: 10}
+  - {x: 3, y: 0, z: 11}
+  - {x: 4, y: 0, z: 5}
+  - {x: 4, y: 0, z: 6}
+  - {x: 4, y: 0, z: 7}
+  - {x: 4, y: 0, z: 8}
+  - {x: 5, y: 0, z: 6}
+  - {x: 5, y: 0, z: 7}
+  - {x: 5, y: 0, z: 8}
+  - {x: 5, y: 0, z: 11}
+  - {x: 5, y: 0, z: 12}
+  - {x: 6, y: 0, z: 4}
+  - {x: 6, y: 0, z: 5}
+  - {x: 6, y: 0, z: 6}
+  - {x: 6, y: 0, z: 7}
+  - {x: 6, y: 0, z: 8}
+  - {x: 6, y: 0, z: 9}
+  - {x: 6, y: 0, z: 10}
+  - {x: 6, y: 0, z: 11}
+  - {x: 6, y: 0, z: 12}
+  - {x: 7, y: 0, z: 4}
+  - {x: 7, y: 0, z: 5}
+  - {x: 7, y: 0, z: 6}
+  - {x: 7, y: 0, z: 7}
+  - {x: 7, y: 0, z: 8}
+  - {x: 7, y: 0, z: 9}
+  - {x: 7, y: 0, z: 10}
+  - {x: 7, y: 0, z: 11}
+  - {x: 7, y: 0, z: 12}
+  - {x: 7, y: 0, z: 13}
+  - {x: 7, y: 0, z: 14}
+  - {x: 8, y: 0, z: 6}
+  - {x: 8, y: 0, z: 7}
+  - {x: 8, y: 0, z: 8}
+  - {x: 8, y: 0, z: 9}
+  - {x: 8, y: 0, z: 10}
+  - {x: 8, y: 0, z: 11}
+  - {x: 8, y: 0, z: 12}
+  - {x: 8, y: 0, z: 13}
+  - {x: 8, y: 0, z: 14}
+  - {x: 9, y: 0, z: 5}
+  - {x: 9, y: 0, z: 6}
+  - {x: 9, y: 0, z: 7}
+  - {x: 9, y: 0, z: 8}
+  - {x: 9, y: 0, z: 11}
+  - {x: 9, y: 0, z: 12}
+  - {x: 9, y: 0, z: 13}
+  - {x: 10, y: 0, z: 5}
+  - {x: 10, y: 0, z: 6}
+  - {x: 10, y: 0, z: 7}
+  - {x: 10, y: 0, z: 11}
+  - {x: 10, y: 0, z: 12}
+  - {x: 10, y: 0, z: 13}
+  - {x: 11, y: 0, z: 6}
+  - {x: 11, y: 0, z: 7}
+  - {x: 11, y: 0, z: 11}
+  - {x: 11, y: 0, z: 12}
+  - {x: 6, y: 0, z: 13}
+  - {x: 5, y: 0, z: 13}
+  - {x: 4, y: 0, z: 13}
+  - {x: 4, y: 0, z: 12}
+  - {x: 3, y: 0, z: 12}
+  - {x: 4, y: 0, z: 11}
+  - {x: 2, y: 0, z: 12}
+  - {x: 1, y: 0, z: 11}
+  - {x: 2, y: 0, z: 8}
+  - {x: 1, y: 0, z: 8}
+  - {x: 2, y: 0, z: 7}
+  - {x: 1, y: 0, z: 7}
+  - {x: 2, y: 0, z: 6}
+  - {x: 1, y: 0, z: 6}
+  - {x: 2, y: 0, z: 5}
+  - {x: 1, y: 0, z: 5}
+  _instances:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -893,565 +458,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1 &740510547
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 740510549}
-  - component: {fileID: 740510548}
-  m_Layer: 0
-  m_Name: renderer_path
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &740510548
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 740510547}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54616d8ef52c4faa89c8866ebb2c72f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _layer: {fileID: 11400000, guid: ab0daf0ddf4e72b4dabb09be313241cb, type: 2}
-  _world: {fileID: 752479491}
-  _tileset: {fileID: 11400000, guid: c6bbb5b81031c3f42b3419a58f56387c, type: 2}
-  _columns:
-  - Tile: {x: 0, y: 0}
-    Instances: []
-  - Tile: {x: 0, y: 1}
-    Instances: []
-  - Tile: {x: 0, y: 2}
-    Instances: []
-  - Tile: {x: 0, y: 3}
-    Instances: []
-  - Tile: {x: 0, y: 4}
-    Instances: []
-  - Tile: {x: 0, y: 5}
-    Instances: []
-  - Tile: {x: 0, y: 6}
-    Instances: []
-  - Tile: {x: 0, y: 7}
-    Instances: []
-  - Tile: {x: 0, y: 8}
-    Instances: []
-  - Tile: {x: 0, y: 9}
-    Instances: []
-  - Tile: {x: 0, y: 10}
-    Instances: []
-  - Tile: {x: 0, y: 11}
-    Instances: []
-  - Tile: {x: 0, y: 12}
-    Instances: []
-  - Tile: {x: 0, y: 13}
-    Instances: []
-  - Tile: {x: 0, y: 14}
-    Instances: []
-  - Tile: {x: 0, y: 15}
-    Instances: []
-  - Tile: {x: 1, y: 0}
-    Instances: []
-  - Tile: {x: 1, y: 1}
-    Instances: []
-  - Tile: {x: 1, y: 2}
-    Instances: []
-  - Tile: {x: 1, y: 3}
-    Instances: []
-  - Tile: {x: 1, y: 4}
-    Instances: []
-  - Tile: {x: 1, y: 5}
-    Instances: []
-  - Tile: {x: 1, y: 6}
-    Instances: []
-  - Tile: {x: 1, y: 7}
-    Instances: []
-  - Tile: {x: 1, y: 8}
-    Instances: []
-  - Tile: {x: 1, y: 9}
-    Instances: []
-  - Tile: {x: 1, y: 10}
-    Instances: []
-  - Tile: {x: 1, y: 11}
-    Instances: []
-  - Tile: {x: 1, y: 12}
-    Instances: []
-  - Tile: {x: 1, y: 13}
-    Instances: []
-  - Tile: {x: 1, y: 14}
-    Instances: []
-  - Tile: {x: 1, y: 15}
-    Instances: []
-  - Tile: {x: 2, y: 0}
-    Instances: []
-  - Tile: {x: 2, y: 1}
-    Instances: []
-  - Tile: {x: 2, y: 2}
-    Instances: []
-  - Tile: {x: 2, y: 3}
-    Instances: []
-  - Tile: {x: 2, y: 4}
-    Instances: []
-  - Tile: {x: 2, y: 5}
-    Instances: []
-  - Tile: {x: 2, y: 6}
-    Instances: []
-  - Tile: {x: 2, y: 7}
-    Instances: []
-  - Tile: {x: 2, y: 8}
-    Instances: []
-  - Tile: {x: 2, y: 9}
-    Instances: []
-  - Tile: {x: 2, y: 10}
-    Instances: []
-  - Tile: {x: 2, y: 11}
-    Instances: []
-  - Tile: {x: 2, y: 12}
-    Instances: []
-  - Tile: {x: 2, y: 13}
-    Instances: []
-  - Tile: {x: 2, y: 14}
-    Instances: []
-  - Tile: {x: 2, y: 15}
-    Instances: []
-  - Tile: {x: 3, y: 0}
-    Instances: []
-  - Tile: {x: 3, y: 1}
-    Instances: []
-  - Tile: {x: 3, y: 2}
-    Instances: []
-  - Tile: {x: 3, y: 3}
-    Instances: []
-  - Tile: {x: 3, y: 4}
-    Instances: []
-  - Tile: {x: 3, y: 5}
-    Instances: []
-  - Tile: {x: 3, y: 6}
-    Instances: []
-  - Tile: {x: 3, y: 7}
-    Instances: []
-  - Tile: {x: 3, y: 8}
-    Instances: []
-  - Tile: {x: 3, y: 9}
-    Instances: []
-  - Tile: {x: 3, y: 10}
-    Instances: []
-  - Tile: {x: 3, y: 11}
-    Instances: []
-  - Tile: {x: 3, y: 12}
-    Instances: []
-  - Tile: {x: 3, y: 13}
-    Instances: []
-  - Tile: {x: 3, y: 14}
-    Instances: []
-  - Tile: {x: 3, y: 15}
-    Instances: []
-  - Tile: {x: 4, y: 0}
-    Instances: []
-  - Tile: {x: 4, y: 1}
-    Instances: []
-  - Tile: {x: 4, y: 2}
-    Instances: []
-  - Tile: {x: 4, y: 3}
-    Instances: []
-  - Tile: {x: 4, y: 4}
-    Instances: []
-  - Tile: {x: 4, y: 5}
-    Instances: []
-  - Tile: {x: 4, y: 6}
-    Instances: []
-  - Tile: {x: 4, y: 7}
-    Instances: []
-  - Tile: {x: 4, y: 8}
-    Instances: []
-  - Tile: {x: 4, y: 9}
-    Instances: []
-  - Tile: {x: 4, y: 10}
-    Instances: []
-  - Tile: {x: 4, y: 11}
-    Instances: []
-  - Tile: {x: 4, y: 12}
-    Instances: []
-  - Tile: {x: 4, y: 13}
-    Instances: []
-  - Tile: {x: 4, y: 14}
-    Instances: []
-  - Tile: {x: 4, y: 15}
-    Instances: []
-  - Tile: {x: 5, y: 0}
-    Instances: []
-  - Tile: {x: 5, y: 1}
-    Instances: []
-  - Tile: {x: 5, y: 2}
-    Instances: []
-  - Tile: {x: 5, y: 3}
-    Instances: []
-  - Tile: {x: 5, y: 4}
-    Instances: []
-  - Tile: {x: 5, y: 5}
-    Instances: []
-  - Tile: {x: 5, y: 6}
-    Instances: []
-  - Tile: {x: 5, y: 7}
-    Instances: []
-  - Tile: {x: 5, y: 8}
-    Instances: []
-  - Tile: {x: 5, y: 9}
-    Instances: []
-  - Tile: {x: 5, y: 10}
-    Instances: []
-  - Tile: {x: 5, y: 11}
-    Instances: []
-  - Tile: {x: 5, y: 12}
-    Instances: []
-  - Tile: {x: 5, y: 13}
-    Instances: []
-  - Tile: {x: 5, y: 14}
-    Instances: []
-  - Tile: {x: 5, y: 15}
-    Instances: []
-  - Tile: {x: 6, y: 0}
-    Instances: []
-  - Tile: {x: 6, y: 1}
-    Instances: []
-  - Tile: {x: 6, y: 2}
-    Instances: []
-  - Tile: {x: 6, y: 3}
-    Instances: []
-  - Tile: {x: 6, y: 4}
-    Instances: []
-  - Tile: {x: 6, y: 5}
-    Instances: []
-  - Tile: {x: 6, y: 6}
-    Instances: []
-  - Tile: {x: 6, y: 7}
-    Instances: []
-  - Tile: {x: 6, y: 8}
-    Instances: []
-  - Tile: {x: 6, y: 9}
-    Instances: []
-  - Tile: {x: 6, y: 10}
-    Instances: []
-  - Tile: {x: 6, y: 11}
-    Instances: []
-  - Tile: {x: 6, y: 12}
-    Instances: []
-  - Tile: {x: 6, y: 13}
-    Instances: []
-  - Tile: {x: 6, y: 14}
-    Instances: []
-  - Tile: {x: 6, y: 15}
-    Instances: []
-  - Tile: {x: 7, y: 0}
-    Instances: []
-  - Tile: {x: 7, y: 1}
-    Instances: []
-  - Tile: {x: 7, y: 2}
-    Instances: []
-  - Tile: {x: 7, y: 3}
-    Instances: []
-  - Tile: {x: 7, y: 4}
-    Instances: []
-  - Tile: {x: 7, y: 5}
-    Instances: []
-  - Tile: {x: 7, y: 6}
-    Instances: []
-  - Tile: {x: 7, y: 7}
-    Instances: []
-  - Tile: {x: 7, y: 8}
-    Instances: []
-  - Tile: {x: 7, y: 9}
-    Instances: []
-  - Tile: {x: 7, y: 10}
-    Instances: []
-  - Tile: {x: 7, y: 11}
-    Instances: []
-  - Tile: {x: 7, y: 12}
-    Instances: []
-  - Tile: {x: 7, y: 13}
-    Instances: []
-  - Tile: {x: 7, y: 14}
-    Instances: []
-  - Tile: {x: 7, y: 15}
-    Instances: []
-  - Tile: {x: 8, y: 0}
-    Instances: []
-  - Tile: {x: 8, y: 1}
-    Instances: []
-  - Tile: {x: 8, y: 2}
-    Instances: []
-  - Tile: {x: 8, y: 3}
-    Instances: []
-  - Tile: {x: 8, y: 4}
-    Instances: []
-  - Tile: {x: 8, y: 5}
-    Instances: []
-  - Tile: {x: 8, y: 6}
-    Instances: []
-  - Tile: {x: 8, y: 7}
-    Instances: []
-  - Tile: {x: 8, y: 8}
-    Instances: []
-  - Tile: {x: 8, y: 9}
-    Instances: []
-  - Tile: {x: 8, y: 10}
-    Instances: []
-  - Tile: {x: 8, y: 11}
-    Instances: []
-  - Tile: {x: 8, y: 12}
-    Instances: []
-  - Tile: {x: 8, y: 13}
-    Instances: []
-  - Tile: {x: 8, y: 14}
-    Instances: []
-  - Tile: {x: 8, y: 15}
-    Instances: []
-  - Tile: {x: 9, y: 0}
-    Instances: []
-  - Tile: {x: 9, y: 1}
-    Instances: []
-  - Tile: {x: 9, y: 2}
-    Instances: []
-  - Tile: {x: 9, y: 3}
-    Instances: []
-  - Tile: {x: 9, y: 4}
-    Instances: []
-  - Tile: {x: 9, y: 5}
-    Instances: []
-  - Tile: {x: 9, y: 6}
-    Instances: []
-  - Tile: {x: 9, y: 7}
-    Instances: []
-  - Tile: {x: 9, y: 8}
-    Instances: []
-  - Tile: {x: 9, y: 9}
-    Instances: []
-  - Tile: {x: 9, y: 10}
-    Instances: []
-  - Tile: {x: 9, y: 11}
-    Instances: []
-  - Tile: {x: 9, y: 12}
-    Instances: []
-  - Tile: {x: 9, y: 13}
-    Instances: []
-  - Tile: {x: 9, y: 14}
-    Instances: []
-  - Tile: {x: 9, y: 15}
-    Instances: []
-  - Tile: {x: 10, y: 0}
-    Instances: []
-  - Tile: {x: 10, y: 1}
-    Instances: []
-  - Tile: {x: 10, y: 2}
-    Instances: []
-  - Tile: {x: 10, y: 3}
-    Instances: []
-  - Tile: {x: 10, y: 4}
-    Instances: []
-  - Tile: {x: 10, y: 5}
-    Instances: []
-  - Tile: {x: 10, y: 6}
-    Instances: []
-  - Tile: {x: 10, y: 7}
-    Instances: []
-  - Tile: {x: 10, y: 8}
-    Instances: []
-  - Tile: {x: 10, y: 9}
-    Instances: []
-  - Tile: {x: 10, y: 10}
-    Instances: []
-  - Tile: {x: 10, y: 11}
-    Instances: []
-  - Tile: {x: 10, y: 12}
-    Instances: []
-  - Tile: {x: 10, y: 13}
-    Instances: []
-  - Tile: {x: 10, y: 14}
-    Instances: []
-  - Tile: {x: 10, y: 15}
-    Instances: []
-  - Tile: {x: 11, y: 0}
-    Instances: []
-  - Tile: {x: 11, y: 1}
-    Instances: []
-  - Tile: {x: 11, y: 2}
-    Instances: []
-  - Tile: {x: 11, y: 3}
-    Instances: []
-  - Tile: {x: 11, y: 4}
-    Instances: []
-  - Tile: {x: 11, y: 5}
-    Instances: []
-  - Tile: {x: 11, y: 6}
-    Instances: []
-  - Tile: {x: 11, y: 7}
-    Instances: []
-  - Tile: {x: 11, y: 8}
-    Instances: []
-  - Tile: {x: 11, y: 9}
-    Instances: []
-  - Tile: {x: 11, y: 10}
-    Instances: []
-  - Tile: {x: 11, y: 11}
-    Instances: []
-  - Tile: {x: 11, y: 12}
-    Instances: []
-  - Tile: {x: 11, y: 13}
-    Instances: []
-  - Tile: {x: 11, y: 14}
-    Instances: []
-  - Tile: {x: 11, y: 15}
-    Instances: []
-  - Tile: {x: 12, y: 0}
-    Instances: []
-  - Tile: {x: 12, y: 1}
-    Instances: []
-  - Tile: {x: 12, y: 2}
-    Instances: []
-  - Tile: {x: 12, y: 3}
-    Instances: []
-  - Tile: {x: 12, y: 4}
-    Instances: []
-  - Tile: {x: 12, y: 5}
-    Instances: []
-  - Tile: {x: 12, y: 6}
-    Instances: []
-  - Tile: {x: 12, y: 7}
-    Instances: []
-  - Tile: {x: 12, y: 8}
-    Instances: []
-  - Tile: {x: 12, y: 9}
-    Instances: []
-  - Tile: {x: 12, y: 10}
-    Instances: []
-  - Tile: {x: 12, y: 11}
-    Instances: []
-  - Tile: {x: 12, y: 12}
-    Instances: []
-  - Tile: {x: 12, y: 13}
-    Instances: []
-  - Tile: {x: 12, y: 14}
-    Instances: []
-  - Tile: {x: 12, y: 15}
-    Instances: []
-  - Tile: {x: 13, y: 0}
-    Instances: []
-  - Tile: {x: 13, y: 1}
-    Instances: []
-  - Tile: {x: 13, y: 2}
-    Instances: []
-  - Tile: {x: 13, y: 3}
-    Instances: []
-  - Tile: {x: 13, y: 4}
-    Instances: []
-  - Tile: {x: 13, y: 5}
-    Instances: []
-  - Tile: {x: 13, y: 6}
-    Instances: []
-  - Tile: {x: 13, y: 7}
-    Instances: []
-  - Tile: {x: 13, y: 8}
-    Instances: []
-  - Tile: {x: 13, y: 9}
-    Instances: []
-  - Tile: {x: 13, y: 10}
-    Instances: []
-  - Tile: {x: 13, y: 11}
-    Instances: []
-  - Tile: {x: 13, y: 12}
-    Instances: []
-  - Tile: {x: 13, y: 13}
-    Instances: []
-  - Tile: {x: 13, y: 14}
-    Instances: []
-  - Tile: {x: 13, y: 15}
-    Instances: []
-  - Tile: {x: 14, y: 0}
-    Instances: []
-  - Tile: {x: 14, y: 1}
-    Instances: []
-  - Tile: {x: 14, y: 2}
-    Instances: []
-  - Tile: {x: 14, y: 3}
-    Instances: []
-  - Tile: {x: 14, y: 4}
-    Instances: []
-  - Tile: {x: 14, y: 5}
-    Instances: []
-  - Tile: {x: 14, y: 6}
-    Instances: []
-  - Tile: {x: 14, y: 7}
-    Instances: []
-  - Tile: {x: 14, y: 8}
-    Instances: []
-  - Tile: {x: 14, y: 9}
-    Instances: []
-  - Tile: {x: 14, y: 10}
-    Instances: []
-  - Tile: {x: 14, y: 11}
-    Instances: []
-  - Tile: {x: 14, y: 12}
-    Instances: []
-  - Tile: {x: 14, y: 13}
-    Instances: []
-  - Tile: {x: 14, y: 14}
-    Instances: []
-  - Tile: {x: 14, y: 15}
-    Instances: []
-  - Tile: {x: 15, y: 0}
-    Instances: []
-  - Tile: {x: 15, y: 1}
-    Instances: []
-  - Tile: {x: 15, y: 2}
-    Instances: []
-  - Tile: {x: 15, y: 3}
-    Instances: []
-  - Tile: {x: 15, y: 4}
-    Instances: []
-  - Tile: {x: 15, y: 5}
-    Instances: []
-  - Tile: {x: 15, y: 6}
-    Instances: []
-  - Tile: {x: 15, y: 7}
-    Instances: []
-  - Tile: {x: 15, y: 8}
-    Instances: []
-  - Tile: {x: 15, y: 9}
-    Instances: []
-  - Tile: {x: 15, y: 10}
-    Instances: []
-  - Tile: {x: 15, y: 11}
-    Instances: []
-  - Tile: {x: 15, y: 12}
-    Instances: []
-  - Tile: {x: 15, y: 13}
-    Instances: []
-  - Tile: {x: 15, y: 14}
-    Instances: []
-  - Tile: {x: 15, y: 15}
-    Instances: []
---- !u!4 &740510549
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 740510547}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &752479490
 GameObject:
   m_ObjectHideFlags: 0
@@ -1519,11 +525,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 752479490}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d2b1919e4fb4545b54998b950a98b8d, type: 3}
+  m_Script: {fileID: 11500000, guid: 42e52f7cd96048ab856b2c94777300fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _layer: {fileID: 11400000, guid: 3608ba4e7cd1caf44a46b3aa04f64fa8, type: 2}
   _world: {fileID: 752479491}
+  _tiles:
+  - {fileID: 11400000, guid: 445e61d1b5764394e8bece9bab87a407, type: 2}
+  - {fileID: 11400000, guid: 4391eecc94fd98947a16548c7f3486a8, type: 2}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1622,4 +631,4 @@ MonoBehaviour:
   Width: 16
   Height: 1
   Length: 16
-  Items: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000101010100000000000000000101010101000001000000000000000101010101010100010000000000000001000101010101010000000000000000010000000101010100000000000000000101000001010101000000000000000000010101010101000000000000000000000000000000000000000000000101000000000000000000000000000000010100000000000001010000000000000101000000010101010100000000000000000000000100010100000000000000000000000000010000000000000000000000000000000000000000000000
+  Items: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000100010000000000010000000000000001000101000101010001000000000000010000010101010100000000000000000100000000010100000000000000000001010000000000000000000000000000010100000001010000000000000000000001010001010101010100000000000000000001010100010100000000000000000000000000010000000000000000000000000000000000000000000000

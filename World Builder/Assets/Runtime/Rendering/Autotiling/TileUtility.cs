@@ -22,22 +22,19 @@ namespace WorldBuilder.Rendering.Autotiling
         //   0--------3      
         //
 
-        // public static readonly Vector3 TILE_SIZE;
         public static readonly Vector3[] CORNER_DIRECTIONS;
         public static readonly Vector3Int[] TILE_INDEX_OFFSETS;
 
-        private static readonly Vector2Int[] TILE_NEIGHBORS = new[]
+        public static readonly Vector3Int[] TILE_NEIGHBORS = new[]
         {
-            new Vector2Int(0, 0),
-            new Vector2Int(-1, 0),
-            new Vector2Int(0, -1),
-            new Vector2Int(-1, -1),
+            new Vector3Int(0, 0, 0),
+            new Vector3Int(-1, 0, 0),
+            new Vector3Int(0, 0, -1),
+            new Vector3Int(-1, 0, -1),
         };
 
         static TileUtility()
         {
-            // TILE_SIZE = new Vector3(5f, 0.75f, 5f);
-
             CORNER_DIRECTIONS = new[]
             {
                 new Vector3(-1f, 0f, -1f),

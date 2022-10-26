@@ -1,32 +1,39 @@
-﻿using System;
-using System.Collections.Generic;
-using UnityEditor;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using WorldBuilder.Data;
 
 namespace WorldBuilder.Rendering.Autotiling
 {
-    public class WorldRendererAutotiling : WorldRenderer<WorldGridByte>, ISerializationCallbackReceiver
+    public class WorldRendererAutotiling : WorldRenderer<WorldGridByte>, IAutotileMap
     {
-        [Serializable]
-        public class TileColumn
+        [SerializeField] private AutotileGenerator _generator;
+
+        private HashSet<Vector3Int> _dirtyCells = new HashSet<Vector3Int>();
+
+        public int Width => DataLayer.Width;
+        public int Height => DataLayer.Height;
+        public int Length => DataLayer.Length;
+        public Vector3 CellSize => World.Layout.CellSize;
+        public Vector3 WorldPosition(int x, int y, int z) => World.Layout.WorldPosition(x, y, z);
+        public byte GetValue(int x, int y, int z) => DataLayer.Get(x, y, z);
+        
+        private bool IsInitialized => IsDataLayerValid;
+
+        protected override void OnValidate()
         {
-            public Vector2Int Tile;
-            public List<GameObject> Instances;
+            base.OnValidate();
+            
+            if (_generator != null)
+                _generator.Map = this;
         }
-
-        [SerializeField] private Tileset _tileset;
-        [SerializeField] [HideInInspector] private TileColumn[] _columns = Array.Empty<TileColumn>();
-
-        private Dictionary<Vector2Int, List<GameObject>> _instanceByCell =
-            new Dictionary<Vector2Int, List<GameObject>>();
-
-        private bool IsInitialized => _tileset != null && IsDataLayerValid;
 
         private void OnEnable()
         {
             if (World != null)
                 World.Changed += OnWorldChanged;
+
+            if (_generator != null)
+                _generator.Map = this;
         }
 
         private void OnDisable()
@@ -40,31 +47,6 @@ namespace WorldBuilder.Rendering.Autotiling
             RegenerateAll();
         }
 
-        [ContextMenu(nameof(RegenerateAll))]
-        private void RegenerateAll()
-        {
-            DestroyAll();
-            GenerateAll();
-        }
-
-        [ContextMenu(nameof(DestroyAll))]
-        private void DestroyAll()
-        {
-            foreach (List<GameObject> instances in _instanceByCell.Values)
-            {
-                foreach (GameObject instance in instances)
-                {
-                    if (instance == null)
-                        continue;
-
-                    DestroyInstance(instance);
-                }
-            }
-
-            _columns = Array.Empty<TileColumn>();
-            _instanceByCell.Clear();
-        }
-
         protected override void OnDataLayerFound(WorldGridByte dataLayer)
         {
             World.Changed -= OnWorldChanged;
@@ -76,130 +58,33 @@ namespace WorldBuilder.Rendering.Autotiling
         {
             if (DataLayer != null)
                 DataLayer.CellChanged -= OnCellChanged;
-            
+
             if (World != null)
                 World.Changed -= OnWorldChanged;
+        }
+        
+        [ContextMenu(nameof(RegenerateAll))]
+        private void RegenerateAll()
+        {
+            if (IsInitialized)
+                _generator.RegenerateAll();
+        }
+
+        [ContextMenu(nameof(DestroyAll))]
+        private void DestroyAll()
+        {
+            _generator.DestroyAll();
         }
 
         private void OnCellChanged(int x, int y, int z)
         {
-            // keep track on dirty coordinates
-        }
-
-        private void GenerateAll()
-        {
-            if (!IsInitialized)
-                return;
-
-            Vector3 offset = Layout.CellSize * 0.5f;
-            offset.y = 0f;
-
-            for (int x = 0; x < DataLayer.Width; x++)
-            {
-                for (int y = 0; y < DataLayer.Height; y++)
-                {
-                    for (int z = 0; z < DataLayer.Length; z++)
-                    {
-                        Vector2Int columnIndex = new Vector2Int(x, z);
-
-                        if (!_instanceByCell.ContainsKey(columnIndex))
-                            _instanceByCell.Add(columnIndex, new List<GameObject>());
-
-                        int tileIndex = ComputeIndex(x, y, z);
-
-                        if (!_tileset.TryGetTile(tileIndex, out Tile tile))
-                            continue;
-
-                        Vector3 position = Layout.WorldPosition(x, y, z) + offset;
-                        Quaternion rotation = Quaternion.AngleAxis(tile.Rotation * -90, Vector3.up);
-
-                        GameObject instance = CreateTileInstance(tile);
-                        instance.hideFlags = HideFlags.HideAndDontSave;
-                        Transform t = instance.transform;
-                        t.SetPositionAndRotation(position, rotation);
-                        t.localScale = Vector3.Scale(tile.Scale, _tileset.Scale);
-                        instance.isStatic = true;
-
-                        _instanceByCell[columnIndex].Add(instance);
-                    }
-                }
-            }
+            _dirtyCells.Add(new Vector3Int(x, y, z));
         }
 
         private void OnWorldChanged()
         {
-            RegenerateAll();
-        }
-
-        private GameObject CreateTileInstance(Tile tile)
-        {
-#if UNITY_EDITOR
-            if (!Application.isPlaying)
-            {
-                GameObject instance = PrefabUtility.InstantiatePrefab(tile.Prefab, transform) as GameObject;
-                instance.GetComponent<Prototype>().enabled = false;
-                return instance;
-            }
-#endif
-
-            return Instantiate(tile.Prefab, transform);
-        }
-
-        private void DestroyInstance(GameObject instance)
-        {
-#if UNITY_EDITOR
-            if (!Application.isPlaying)
-            {
-                DestroyImmediate(instance);
-                return;
-            }
-#endif
-
-            Destroy(instance);
-        }
-
-        protected virtual int ComputeIndex(int x, int y, int z)
-        {
-            return TileUtility.ComputeID(
-                GetTerrainID(x, y, z),
-                GetTerrainID(x, y, z + 1),
-                GetTerrainID(x + 1, y, z + 1),
-                GetTerrainID(x + 1, y, z));
-        }
-
-        protected virtual byte GetTerrainID(int x, int y, int z)
-        {
-            return DataLayer.Get(x, y, z);
-        }
-
-        public void OnBeforeSerialize()
-        {
-            _columns = new TileColumn[_instanceByCell.Count];
-
-            int i = 0;
-            foreach (Vector2Int key in _instanceByCell.Keys)
-            {
-                _columns[i] = new TileColumn()
-                {
-                    Tile = key,
-                    Instances = _instanceByCell[key]
-                };
-
-                i++;
-            }
-        }
-
-        public void OnAfterDeserialize()
-        {
-            _instanceByCell = new Dictionary<Vector2Int, List<GameObject>>();
-
-            if (_columns == null || _columns.Length == 0)
-                return;
-
-            int count = _columns.Length;
-
-            for (int i = 0; i < count; i++)
-                _instanceByCell.Add(_columns[i].Tile, _columns[i].Instances);
+            _generator.RegenerateDirty(_dirtyCells);
+            _dirtyCells.Clear();
         }
     }
 }
