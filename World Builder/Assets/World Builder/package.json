@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "displayName": "World Builder",
   "description": "Create and edit maps using a tile system.",
+    "dependencies": {
+    "com.trymygames.autotiler": "0.1.0"
+ },
   "author": {
     "name": "Daniel Rusnac",
     "email": "daniel.rusnac@trymygames.com",

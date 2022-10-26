@@ -2,7 +2,7 @@
   "name": "com.trymygames.autotiler",
   "version": "0.1.0",
   "displayName": "Autotiler",
-  "description": "Create and edit tilemaps.",
+  "description": "Create tilesets with neighboring rules.",
   "author": {
     "name": "Daniel Rusnac",
     "email": "daniel.rusnac@trymygames.com",
