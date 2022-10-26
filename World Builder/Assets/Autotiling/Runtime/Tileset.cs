@@ -28,15 +28,7 @@ namespace Autotiling
             tile = null;
             return false;
         }
-
-        public Matrix4x4 GetTransformation(Vector3 position, Tile tile)
-        {
-            return Matrix4x4.TRS(
-                position,
-                Quaternion.AngleAxis(tile.Rotation * -90, Vector3.up),
-                tile.Scale);
-        }
-
+        
         private void OnValidate()
         {
             UpdateTiles();
