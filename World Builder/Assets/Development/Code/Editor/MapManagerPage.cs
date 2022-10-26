@@ -5,27 +5,27 @@ using UnityEngine;
 
 namespace WorldBuilder
 {
-    public class MapManagerPage : IWorldBuilderPage
+    public class MapManagerPage : WorldBuilderPage
     {
         private GUIContent[] _mapsGUi;
 
         private MapManager MapManager => MapManager.instance;
 
-        public string Name => "Maps";
+        public override string Title => "Maps";
 
-        public void Show()
+        public override void Show()
         {
             MapManager.SearchForMapsInProject();
             MapManager.MapsChanged += OnMapsChanged;
             OnMapsChanged();
         }
 
-        public void Hide()
+        public override void Hide()
         {
             MapManager.MapsChanged -= OnMapsChanged;
         }
 
-        public void OnGUI()
+        public override void OnGUI()
         {
             GUILayout.BeginHorizontal(GUILayout.ExpandHeight(true));
                 GUILayout.BeginVertical("box", GUILayout.Width(200), GUILayout.ExpandHeight(true));

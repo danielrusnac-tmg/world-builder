@@ -8,31 +8,36 @@ using WorldBuilder.Data;
 
 namespace WorldBuilder.Painting
 {
-    public class TilePaintingPage : IWorldBuilderPage
+    [CreateAssetMenu(menuName = CreatePath.PAGES + "Tile Painting", fileName = "page_tiles")]
+    public class TilePaintingPage : WorldBuilderPage
     {
         private const int ITEM_WIDTH = 100;
 
-        private bool _isDragging;
-        private int _selectedPaletteIndex;
-        private int _selectedBrushIndex;
-        private Vector3Int _startDragTarget;
-        private Vector2 _scroll;
-        private LayerMask _mask;
-        private World _world;
-        private HashSet<Vector3Int> _draggingSet = new HashSet<Vector3Int>();
-        private Palette[] _palettes = Array.Empty<Palette>();
-        private GUIContent[] _paletteContentIcons = Array.Empty<GUIContent>();
+        [SerializeField] private LayerMask _mask;
+        
+        [NonSerialized] private bool _isDragging;
+        [NonSerialized] private int _selectedPaletteIndex;
+        [NonSerialized] private int _selectedBrushIndex;
+        [NonSerialized] private Vector3Int _startDragTarget;
+        [NonSerialized] private Vector2 _scroll;
+        [NonSerialized] private World _world;
+        [NonSerialized] private HashSet<Vector3Int> _draggingSet = new HashSet<Vector3Int>();
+        [NonSerialized] private Palette[] _palettes = Array.Empty<Palette>();
+        [NonSerialized] private GUIContent[] _paletteContentIcons = Array.Empty<GUIContent>();
 
-        public string Name => "Tiles";
         private bool IsInitialized => _world != null && _palettes.Length > 0 && SelectedPalette.Brushes.Length > 0;
 
         private Palette SelectedPalette => _palettes[_selectedPaletteIndex];
 
         private Brush SelectedBrush => SelectedPalette.Brushes[_selectedBrushIndex];
 
-        public void Show()
+        private void Reset()
         {
             _mask = LayerMask.GetMask("Default");
+        }
+
+        public override void Show()
+        {
             _world = SearchWorldInCurrentScene();
             _palettes = SearchPalettesInProject();
             RefreshPaletteContent();
@@ -40,12 +45,12 @@ namespace WorldBuilder.Painting
             SceneView.duringSceneGui += OnSceneGUI;
         }
 
-        public void Hide()
+        public override void Hide()
         {
             SceneView.duringSceneGui -= OnSceneGUI;
         }
 
-        public void OnGUI()
+        public override void OnGUI()
         {
             if (!IsInitialized)
             {
@@ -107,6 +112,7 @@ namespace WorldBuilder.Painting
         {
             return target => SelectedBrush.Paint(new PaintData
             {
+                StartCoordinate = _startDragTarget,
                 Coordinate = target,
                 IsErase = e.control,
                 Data = _world.Data
@@ -141,7 +147,7 @@ namespace WorldBuilder.Painting
 
         private Palette[] SearchPalettesInProject()
         {
-            return EditorUtility.LoadAssets<Palette>();
+            return EditorHelper.LoadAssets<Palette>();
         }
 
         private static bool DrawPaletteContent(GUIContent[] content, ref int selected)

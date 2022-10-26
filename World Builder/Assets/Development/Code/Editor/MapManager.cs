@@ -37,7 +37,7 @@ namespace WorldBuilder
 
         public void SearchForMapsInProject()
         {
-            Maps = EditorUtility.LoadAssets<Map>().ToList();
+            Maps = EditorHelper.LoadAssets<Map>().ToList();
             MapsChanged?.Invoke();
         }
 
@@ -104,7 +104,7 @@ namespace WorldBuilder
 
         private SceneAsset GetMapScene(Map map)
         {
-            SceneAsset[] scenes = EditorUtility.LoadAssets<SceneAsset>();
+            SceneAsset[] scenes = EditorHelper.LoadAssets<SceneAsset>();
             
             foreach (SceneAsset sceneAsset in scenes)
             {
