@@ -28,11 +28,6 @@ namespace Autotiler
             tile = null;
             return false;
         }
-        
-        private void OnValidate()
-        {
-            UpdateTiles();
-        }
 
         [ContextMenu(nameof(UpdateTiles))]
         private void UpdateTiles()

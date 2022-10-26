@@ -30,6 +30,11 @@ namespace WorldBuilder
             _data.Changed -= OnDataChanged;
         }
 
+        private void Start()
+        {
+            ChangedAll?.Invoke();
+        }
+
         [ContextMenu(nameof(MarkDirtyAll))]
         public void MarkDirtyAll()
         {

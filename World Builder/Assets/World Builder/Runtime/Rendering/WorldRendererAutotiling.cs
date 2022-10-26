@@ -41,23 +41,16 @@ namespace WorldBuilder.Rendering
             UnsubscribeFromWorld();
         }
 
-        private void Start()
-        {
-            RegenerateAll();
-        }
-
         protected override void OnDataLayerFound(WorldGridByte dataLayer)
         {
-            UnsubscribeFromWorld();
             SubscribeToWorld();
-            dataLayer.CellChanged += OnCellChanged;
+            UnsubscribeFromDataLayer();
+            SubscribeToDatalayer(dataLayer);
         }
 
         protected override void OnDataLayerLost()
         {
-            if (DataLayer != null)
-                DataLayer.CellChanged -= OnCellChanged;
-
+            UnsubscribeFromDataLayer();
             UnsubscribeFromWorld();
         }
 
@@ -107,6 +100,17 @@ namespace WorldBuilder.Rendering
                 World.Changed -= OnWorldChanged;
                 World.ChangedAll -= OnWorldChangedAll;
             }
+        }
+        
+        private void SubscribeToDatalayer(WorldGridByte dataLayer)
+        {
+            dataLayer.CellChanged += OnCellChanged;
+        }
+
+        private void UnsubscribeFromDataLayer()
+        {
+            if (DataLayer != null)
+                DataLayer.CellChanged -= OnCellChanged;
         }
     }
 }
