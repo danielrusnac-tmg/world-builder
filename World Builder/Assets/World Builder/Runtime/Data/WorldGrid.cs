@@ -30,7 +30,7 @@ namespace WorldBuilder.Data
             if (!IsValidCoordinate(x, y, z))
                 return default;
 
-            return Items[ArrayUtility.Flatten(x, y, z, Width, Height)];
+            return Items[Flatten(x, y, z)];
         }
 
         public bool Set(T value, Vector3Int coordinate)
@@ -43,7 +43,7 @@ namespace WorldBuilder.Data
             if (!IsValidCoordinate(x, y, z))
                 return false;
 
-            Items[ArrayUtility.Flatten(x, y, z, Width, Height)] = value;
+            Items[Flatten(x, y, z)] = value;
             CellChanged?.Invoke(x, y, z);
             OnChanged();
 
@@ -55,6 +55,11 @@ namespace WorldBuilder.Data
             return x >= 0 && x < Width &&
                    y >= 0 && y < Height &&
                    z >= 0 && z < Length;
+        }
+        
+        private int Flatten(int x, int y, int z)
+        {
+            return x + y * Width + z * Width * Height;
         }
     }
 }
