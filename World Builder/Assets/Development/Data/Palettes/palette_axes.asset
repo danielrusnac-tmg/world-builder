@@ -10,10 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 190eee4999383c3498bc6f059f96ef9c, type: 3}
-  m_Name: palette_solid
+  m_Name: palette_axes
   m_EditorClassIdentifier: 
-  _name: Solid
-  _descriptions: A basic autotiling brush
+  _name: Axes
+  _descriptions: Tiles from Axes
   _brushes:
-  - {fileID: 11400000, guid: 5e14e66643dbb784aabd8afcaea9f222, type: 2}
   - {fileID: 11400000, guid: 2d48fc157fd256744b0d9be6d7d028e7, type: 2}
+  - {fileID: 11400000, guid: 7907ca4382e5fe644b7560b4cbd4f0ef, type: 2}
+  - {fileID: 11400000, guid: 4261f7116a685334fb167e0965284659, type: 2}
+  - {fileID: 11400000, guid: 645c766e06c164c4d88043c68b3d0803, type: 2}
+  - {fileID: 11400000, guid: 04244b5ef15b9df46a7b9c3dad5d1629, type: 2}

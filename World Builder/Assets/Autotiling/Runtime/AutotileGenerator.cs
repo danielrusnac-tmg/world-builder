@@ -8,6 +8,7 @@ namespace Autotiling
 {
     public class AutotileGenerator : MonoBehaviour, ISerializationCallbackReceiver
     {
+        [SerializeField] private bool _placePrefabs;
         [SerializeField] private Tileset _tileset;
         [SerializeField] private Vector3Int[] _coordinates = Array.Empty<Vector3Int>();
         [SerializeField] private GameObject[] _instances = Array.Empty<GameObject>();
@@ -117,7 +118,7 @@ namespace Autotiling
         private GameObject CreateTileInstance(Tile tile)
         {
 #if UNITY_EDITOR
-            if (!Application.isPlaying)
+            if (!Application.isPlaying && _placePrefabs)
             {
                 GameObject instance = PrefabUtility.InstantiatePrefab(tile.Prefab, transform) as GameObject;
                 instance.GetComponent<Prototype>().enabled = false;

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _paintType: {fileID: 11400000, guid: 01f1ab388124e0946ad7d4873dcb5ca3, type: 2}
   _eraseType: {fileID: 0}
-  _layer: {fileID: 11400000, guid: 3608ba4e7cd1caf44a46b3aa04f64fa8, type: 2}
+  _layer: {fileID: 11400000, guid: ab0daf0ddf4e72b4dabb09be313241cb, type: 2}
   _fillHeight: 1
   _guiContent:
     m_Text: tile_3_path
