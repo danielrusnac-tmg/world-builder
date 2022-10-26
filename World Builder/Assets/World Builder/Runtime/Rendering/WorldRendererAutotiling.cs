@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Autotiling;
+using Autotiler;
 using UnityEngine;
 using WorldBuilder.Data;
 

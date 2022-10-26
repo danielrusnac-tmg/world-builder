@@ -1,4 +1,4 @@
-﻿using Autotiling;
+﻿using Autotiler;
 using UnityEngine;
 using WorldBuilder.Data;
 

@@ -2,7 +2,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace Autotiling
+namespace Autotiler
 {
     internal class EditorHelper
     {

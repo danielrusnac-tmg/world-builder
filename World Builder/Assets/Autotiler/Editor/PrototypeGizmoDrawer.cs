@@ -3,7 +3,7 @@ using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
-namespace Autotiling
+namespace Autotiler
 {
     [InitializeOnLoad]
     public static class PrototypeGizmoDrawer

@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Autotiling
+namespace Autotiler
 {
     [Serializable]
     public class Tile

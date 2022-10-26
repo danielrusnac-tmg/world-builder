@@ -1,4 +1,4 @@
-﻿namespace Autotiling
+﻿namespace Autotiler
 {
     public static class CreatePath
     {

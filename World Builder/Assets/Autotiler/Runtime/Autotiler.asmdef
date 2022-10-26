@@ -1,6 +1,6 @@
 {
-    "name": "Autotiling",
-    "rootNamespace": "Autotiling",
+    "name": "Autotiler",
+    "rootNamespace": "Autotiler",
     "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],

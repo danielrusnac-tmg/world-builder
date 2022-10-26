@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Autotiling
+namespace Autotiler
 {
     [CreateAssetMenu(menuName = CreatePath.ROOT + "Tile Type", fileName = "tile_")]
     public class TileType : ScriptableObject

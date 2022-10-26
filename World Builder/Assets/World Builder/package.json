@@ -1,0 +1,11 @@
+{
+  "name": "com.trymygames.worldbuilder",
+  "version": "0.1.0",
+  "displayName": "World Builder",
+  "description": "Create and edit maps using a tile system.",
+  "author": {
+    "name": "Daniel Rusnac",
+    "email": "daniel.rusnac@trymygames.com",
+    "url": "https://github.com/danielrusnac-tmg"
+  }
+}

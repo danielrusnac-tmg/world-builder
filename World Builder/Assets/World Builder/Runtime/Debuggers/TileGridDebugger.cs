@@ -1,4 +1,4 @@
-﻿using Autotiling;
+﻿using Autotiler;
 using UnityEngine;
 
 namespace WorldBuilder.Debuggers

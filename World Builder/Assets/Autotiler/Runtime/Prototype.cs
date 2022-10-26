@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Autotiling
+namespace Autotiler
 {
     public class Prototype : MonoBehaviour
     {

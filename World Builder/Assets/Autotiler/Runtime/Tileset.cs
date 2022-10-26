@@ -3,7 +3,7 @@ using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
-namespace Autotiling
+namespace Autotiler
 {
     [CreateAssetMenu(menuName = CreatePath.ROOT + "Tileset", fileName = "tileset_")]
     public class Tileset : ScriptableObject
