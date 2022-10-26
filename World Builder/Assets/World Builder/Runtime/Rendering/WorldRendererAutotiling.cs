@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
+using Autotiling;
 using UnityEngine;
-using WorldBuilder.Autotiling;
 using WorldBuilder.Data;
 
 namespace WorldBuilder.Rendering

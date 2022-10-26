@@ -4,7 +4,7 @@ using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
-namespace WorldBuilder.Autotiling
+namespace Autotiling
 {
     public class AutotileGenerator : MonoBehaviour, ISerializationCallbackReceiver
     {

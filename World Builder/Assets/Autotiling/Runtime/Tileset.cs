@@ -3,9 +3,9 @@ using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
-namespace WorldBuilder.Autotiling
+namespace Autotiling
 {
-    [CreateAssetMenu(menuName = CreatePath.AUTOTILING + "Tileset", fileName = "tileset_")]
+    [CreateAssetMenu(menuName = CreatePath.ROOT + "Tileset", fileName = "tileset_")]
     public class Tileset : ScriptableObject
     {
         [SerializeField] private Vector3 _scale = Vector3.one;

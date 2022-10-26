@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 
-namespace WorldBuilder.Autotiling
+namespace Autotiling
 {
-    [CreateAssetMenu(menuName = CreatePath.AUTOTILING + "Tile Type", fileName = "tile_")]
+    [CreateAssetMenu(menuName = CreatePath.ROOT + "Tile Type", fileName = "tile_")]
     public class TileType : ScriptableObject
     {
         [SerializeField] private byte _id;

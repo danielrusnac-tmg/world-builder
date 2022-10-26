@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace WorldBuilder.Autotiling
+namespace Autotiling
 {
     public interface IAutotileMap
     {

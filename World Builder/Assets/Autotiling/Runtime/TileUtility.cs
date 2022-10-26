@@ -2,7 +2,7 @@
 using System.Linq;
 using UnityEngine;
 
-namespace WorldBuilder.Autotiling
+namespace Autotiling
 {
     public static class TileUtility
     {

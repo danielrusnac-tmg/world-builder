@@ -2,7 +2,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace WorldBuilder.Autotiling
+namespace Autotiling
 {
     [InitializeOnLoad]
     public static class PrototypeGizmoDrawer
@@ -53,7 +53,7 @@ namespace WorldBuilder.Autotiling
                     if (GUILayout.Button(terrain.name.Replace("tile_", "")))
                     {
                         prototype.Corners[i]._tile = terrain;
-                        UnityEditor.EditorUtility.SetDirty(prototype);
+                        EditorUtility.SetDirty(prototype);
                     }
 
                     GUI.backgroundColor = originalColor;
@@ -65,7 +65,7 @@ namespace WorldBuilder.Autotiling
 
         public static void LoadTileTypes()
         {
-            s_terrainTypes = EditorUtility.LoadAssets<TileType>();
+            s_terrainTypes = EditorHelper.LoadAssets<TileType>();
         }
 
         private static Vector3 GetCornerPoint(int i, Prototype prototype)

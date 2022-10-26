@@ -1,9 +1,9 @@
 ﻿using UnityEditor;
 
-namespace WorldBuilder.Autotiling
+namespace Autotiling
 {
     [CustomEditor(typeof(Prototype))]
-    public class PrototypeEditor : Editor
+    public class PrototypeEditor : UnityEditor.Editor
     {
         private Prototype _prototype;
 

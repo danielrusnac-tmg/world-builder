@@ -1,9 +1,8 @@
 {
-    "name": "WorldBuilder.Editor",
-    "rootNamespace": "WorldBuilder",
+    "name": "Autotiling.Editor",
+    "rootNamespace": "Autotiling",
     "references": [
-        "GUID:d048d7fccb952394495dd6fc0cb0b9bc",
-        "GUID:83a9c08550e441d418d13cf73626e8da"
+        "Autotiling"
     ],
     "includePlatforms": [
         "Editor"

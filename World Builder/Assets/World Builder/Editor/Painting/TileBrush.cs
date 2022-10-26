@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using WorldBuilder.Autotiling;
+﻿using Autotiling;
+using UnityEngine;
 using WorldBuilder.Data;
 
 namespace WorldBuilder.Painting

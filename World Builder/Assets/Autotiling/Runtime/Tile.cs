@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace WorldBuilder.Autotiling
+namespace Autotiling
 {
     [Serializable]
     public class Tile

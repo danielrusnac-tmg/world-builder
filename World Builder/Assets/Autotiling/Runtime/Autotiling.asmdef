@@ -1,9 +1,7 @@
 {
-    "name": "WorldBuilder",
-    "rootNamespace": "WorldBuilder",
-    "references": [
-        "GUID:83a9c08550e441d418d13cf73626e8da"
-    ],
+    "name": "Autotiling",
+    "rootNamespace": "Autotiling",
+    "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
