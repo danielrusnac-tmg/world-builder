@@ -1034,7 +1034,7 @@ MonoBehaviour:
     - {fileID: 1054126933}
   _layout:
     CellSize: {x: 5, y: 0.75, z: 5}
-    Origin: {x: 0, y: 0, z: 0}
+    Origin: {x: -40, y: 0, z: -40}
 --- !u!4 &752479492
 Transform:
   m_ObjectHideFlags: 0

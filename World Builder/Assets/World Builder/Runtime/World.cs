@@ -33,6 +33,7 @@ namespace WorldBuilder
         public void Resize()
         {
             _data.Resize(_newSize.x, _newSize.y, _newSize.z);
+            _layout.Origin = transform.position + new Vector3(_newSize.x * _layout.CellSize.x, 0f, _newSize.z * _layout.CellSize.z) * 0.5f;
         }
 
         private void OnDrawGizmos()
