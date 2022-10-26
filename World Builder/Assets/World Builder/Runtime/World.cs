@@ -11,7 +11,8 @@ namespace WorldBuilder
     public class World : MonoBehaviour
     {
         public event Action Changed;
-        
+        public event Action ChangedAll;
+
         [SerializeField] private Vector3Int _newSize = Vector3Int.one;
         [SerializeField] private WorldData _data = new WorldData(1, 1, 1);
         [SerializeField] private WorldLayout _layout = WorldLayout.One;
@@ -29,11 +30,24 @@ namespace WorldBuilder
             _data.Changed -= OnDataChanged;
         }
 
+        [ContextMenu(nameof(MarkDirtyAll))]
+        public void MarkDirtyAll()
+        {
+#if UNITY_EDITOR
+            EditorSceneManager.MarkSceneDirty(gameObject.scene);
+#endif
+
+            ChangedAll?.Invoke();
+        }
+
         [ContextMenu(nameof(Resize))]
         public void Resize()
         {
+            _layout.Origin = transform.position - 
+                             new Vector3(_newSize.x * _layout.CellSize.x, 0f, _newSize.z * _layout.CellSize.z) * 0.5f;
+            
             _data.Resize(_newSize.x, _newSize.y, _newSize.z);
-            _layout.Origin = transform.position + new Vector3(_newSize.x * _layout.CellSize.x, 0f, _newSize.z * _layout.CellSize.z) * 0.5f;
+            MarkDirtyAll();
         }
 
         private void OnDrawGizmos()
@@ -48,7 +62,7 @@ namespace WorldBuilder
 #if UNITY_EDITOR
             EditorSceneManager.MarkSceneDirty(gameObject.scene);
 #endif
-            
+
             Changed?.Invoke();
         }
     }
