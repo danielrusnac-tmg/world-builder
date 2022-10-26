@@ -10,7 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1313c120255264a4cb30bc5b82eeaec3, type: 3}
-  m_Name: tile_air
+  m_Name: tile_3_path
   m_EditorClassIdentifier: 
-  _id: 0
-  _debugColor: {r: 1, g: 1, b: 1, a: 1}
+  _id: 3
+  _debugColor: {r: 0.99215686, g: 0.86363006, b: 0.47058818, a: 1}
+  _name: Path

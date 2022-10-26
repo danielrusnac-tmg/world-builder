@@ -7,8 +7,12 @@ namespace Autotiling
     {
         [SerializeField] private byte _id;
         [SerializeField] private Color _debugColor;
-        
+        [SerializeField] private string _name;
+        [SerializeField] private bool _showAsOption = true;
+
         public byte ID => _id;
         public Color DebugColor => _debugColor;
+        public bool ShowAsOption => _showAsOption;
+        public string Name => _name;
     }
 }

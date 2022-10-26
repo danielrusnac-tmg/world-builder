@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
@@ -8,6 +9,7 @@ namespace Autotiling
     public static class PrototypeGizmoDrawer
     {
         private const float CORNER_SIZE = 0.15f;
+        private const float BUTTON_WIDTH = 80f;
 
         private static TileType[] s_terrainTypes = Array.Empty<TileType>();
 
@@ -50,7 +52,7 @@ namespace Autotiling
                     if (prototype.Corners[i].TerrainID == terrain.ID)
                         GUI.backgroundColor = terrain.DebugColor;
 
-                    if (GUILayout.Button(terrain.name.Replace("tile_", "")))
+                    if (GUILayout.Button(terrain.Name))
                     {
                         prototype.Corners[i]._tile = terrain;
                         EditorUtility.SetDirty(prototype);
@@ -65,7 +67,7 @@ namespace Autotiling
 
         public static void LoadTileTypes()
         {
-            s_terrainTypes = EditorHelper.LoadAssets<TileType>();
+            s_terrainTypes = EditorHelper.LoadAssets<TileType>().Where(type => type.ShowAsOption).ToArray();
         }
 
         private static Vector3 GetCornerPoint(int i, Prototype prototype)
