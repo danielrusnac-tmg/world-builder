@@ -1,9 +1,19 @@
 fileFormatVersion: 2
-guid: 19298b900ea1ce641ac5cc5a5a612a2d
+guid: 59c40e3a055be294e8168f20234d7277
 ModelImporter:
   serializedVersion: 20300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: dirt
+    second: {fileID: 2100000, guid: 401c4c4b03851a04bb0b3add3c15b4ae, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: grass
+    second: {fileID: 2100000, guid: 2f808cfc1fdbf724899f25e71e23a712, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -36,7 +46,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1
     importVisibility: 1

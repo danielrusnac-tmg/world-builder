@@ -150,7 +150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _size: {x: 5, y: 0.75, z: 5}
   _corners:
-  - _tile: {fileID: 11400000, guid: 93c4ac0ab6e21ad4e8354480d9257931, type: 2}
+  - _tile: {fileID: 11400000, guid: 445e61d1b5764394e8bece9bab87a407, type: 2}
   - _tile: {fileID: 11400000, guid: 445e61d1b5764394e8bece9bab87a407, type: 2}
   - _tile: {fileID: 11400000, guid: 445e61d1b5764394e8bece9bab87a407, type: 2}
   - _tile: {fileID: 11400000, guid: 93c4ac0ab6e21ad4e8354480d9257931, type: 2}

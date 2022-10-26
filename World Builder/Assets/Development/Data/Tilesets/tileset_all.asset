@@ -504,6 +504,34 @@ MonoBehaviour:
     Prefab: {fileID: 3238774749147501897, guid: 55e690f01d52dc740a73fbdc9cbfe5a2, type: 3}
     Mesh: {fileID: 0}
     Materials: []
+  - Name: 048_trees_out_R0_None
+    ID: 48
+    Rotation: 0
+    Scale: {x: 1, y: 1, z: 1}
+    Prefab: {fileID: 1814139211382399615, guid: 55e690f01d52dc740a73fbdc9cbfe5a2, type: 3}
+    Mesh: {fileID: 0}
+    Materials: []
+  - Name: 3072_trees_out_R1_None
+    ID: 3072
+    Rotation: 1
+    Scale: {x: 1, y: 1, z: 1}
+    Prefab: {fileID: 1814139211382399615, guid: 55e690f01d52dc740a73fbdc9cbfe5a2, type: 3}
+    Mesh: {fileID: 0}
+    Materials: []
+  - Name: 384_trees_out_R2_None
+    ID: 384
+    Rotation: 2
+    Scale: {x: 1, y: 1, z: 1}
+    Prefab: {fileID: 1814139211382399615, guid: 55e690f01d52dc740a73fbdc9cbfe5a2, type: 3}
+    Mesh: {fileID: 0}
+    Materials: []
+  - Name: 006_trees_out_R3_None
+    ID: 6
+    Rotation: 3
+    Scale: {x: 1, y: 1, z: 1}
+    Prefab: {fileID: 1814139211382399615, guid: 55e690f01d52dc740a73fbdc9cbfe5a2, type: 3}
+    Mesh: {fileID: 0}
+    Materials: []
   - Name: 432_trees_saddle_R0_None
     ID: 432
     Rotation: 0

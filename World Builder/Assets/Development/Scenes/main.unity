@@ -20,9 +20,9 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.9198113, g: 0.9465409, b: 1, a: 1}
-  m_AmbientEquatorColor: {r: 0.7471075, g: 0.88065696, b: 0.9716981, a: 1}
-  m_AmbientGroundColor: {r: 0.18462572, g: 0.11307404, b: 0.1981132, a: 1}
+  m_AmbientSkyColor: {r: 0.9622642, g: 0.9402177, b: 0.8851015, a: 1}
+  m_AmbientEquatorColor: {r: 0.41939482, g: 0.19023673, b: 0.7075472, a: 1}
+  m_AmbientGroundColor: {r: 0.020558922, g: 0.040238336, b: 0.13207549, a: 1}
   m_AmbientIntensity: 1
   m_AmbientMode: 1
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
@@ -1052,38 +1052,112 @@ MonoBehaviour:
   _placePrefabs: 0
   _tileset: {fileID: 11400000, guid: eda4277ae7348664b8b44c5aaedf9579, type: 2}
   _coordinates:
-  - {x: 5, y: 0, z: 3}
-  - {x: 4, y: 0, z: 3}
-  - {x: 5, y: 0, z: 2}
-  - {x: 6, y: 0, z: 3}
-  - {x: 4, y: 0, z: 2}
-  - {x: 3, y: 0, z: 3}
-  - {x: 4, y: 0, z: 4}
-  - {x: 3, y: 0, z: 4}
-  - {x: 3, y: 0, z: 2}
+  - {x: 1, y: 0, z: 3}
+  - {x: 1, y: 0, z: 4}
+  - {x: 1, y: 0, z: 5}
+  - {x: 1, y: 0, z: 11}
+  - {x: 1, y: 0, z: 12}
+  - {x: 2, y: 0, z: 2}
   - {x: 2, y: 0, z: 3}
   - {x: 2, y: 0, z: 4}
-  - {x: 1, y: 0, z: 4}
-  - {x: 2, y: 0, z: 12}
+  - {x: 2, y: 0, z: 5}
+  - {x: 2, y: 0, z: 7}
+  - {x: 2, y: 0, z: 8}
   - {x: 2, y: 0, z: 11}
-  - {x: 3, y: 0, z: 12}
-  - {x: 3, y: 0, z: 11}
-  - {x: 4, y: 0, z: 8}
-  - {x: 3, y: 0, z: 8}
+  - {x: 2, y: 0, z: 12}
+  - {x: 2, y: 0, z: 13}
+  - {x: 3, y: 0, z: 2}
+  - {x: 3, y: 0, z: 3}
+  - {x: 3, y: 0, z: 4}
+  - {x: 3, y: 0, z: 5}
   - {x: 3, y: 0, z: 7}
-  - {x: 7, y: 0, z: 5}
-  - {x: 6, y: 0, z: 5}
+  - {x: 3, y: 0, z: 8}
+  - {x: 3, y: 0, z: 9}
+  - {x: 3, y: 0, z: 11}
+  - {x: 3, y: 0, z: 12}
+  - {x: 3, y: 0, z: 13}
+  - {x: 4, y: 0, z: 2}
+  - {x: 4, y: 0, z: 3}
+  - {x: 4, y: 0, z: 4}
+  - {x: 4, y: 0, z: 5}
+  - {x: 4, y: 0, z: 7}
+  - {x: 4, y: 0, z: 8}
+  - {x: 4, y: 0, z: 9}
+  - {x: 4, y: 0, z: 11}
+  - {x: 4, y: 0, z: 12}
+  - {x: 5, y: 0, z: 2}
+  - {x: 5, y: 0, z: 3}
+  - {x: 5, y: 0, z: 4}
+  - {x: 6, y: 0, z: 2}
+  - {x: 6, y: 0, z: 3}
   - {x: 6, y: 0, z: 4}
+  - {x: 6, y: 0, z: 5}
+  - {x: 6, y: 0, z: 6}
   - {x: 7, y: 0, z: 4}
-  - {x: 10, y: 0, z: 4}
+  - {x: 7, y: 0, z: 5}
+  - {x: 7, y: 0, z: 6}
+  - {x: 8, y: 0, z: 4}
+  - {x: 8, y: 0, z: 5}
+  - {x: 8, y: 0, z: 9}
+  - {x: 8, y: 0, z: 10}
+  - {x: 9, y: 0, z: 3}
   - {x: 9, y: 0, z: 4}
-  - {x: 10, y: 0, z: 5}
-  - {x: 13, y: 0, z: 6}
-  - {x: 12, y: 0, z: 6}
-  - {x: 9, y: 0, z: 10}
-  - {x: 10, y: 0, z: 10}
+  - {x: 9, y: 0, z: 5}
   - {x: 9, y: 0, z: 9}
+  - {x: 9, y: 0, z: 10}
+  - {x: 9, y: 0, z: 11}
+  - {x: 10, y: 0, z: 3}
+  - {x: 10, y: 0, z: 4}
+  - {x: 10, y: 0, z: 5}
+  - {x: 10, y: 0, z: 9}
+  - {x: 10, y: 0, z: 10}
+  - {x: 10, y: 0, z: 11}
+  - {x: 11, y: 0, z: 4}
+  - {x: 11, y: 0, z: 5}
+  - {x: 12, y: 0, z: 5}
+  - {x: 12, y: 0, z: 6}
+  - {x: 12, y: 0, z: 7}
+  - {x: 13, y: 0, z: 5}
+  - {x: 13, y: 0, z: 6}
+  - {x: 13, y: 0, z: 7}
   _instances:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
