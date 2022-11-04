@@ -12,18 +12,13 @@ namespace Grids
         [SerializeField, HideInInspector] private int m_height;
         [SerializeField, HideInInspector] private T[] m_items;
 
-        public FlatGridLayout Layout;
-
         public int Width => m_width;
         public int Height => m_height;
 
-        public FlatGrid(int width, int height) : this(width, height, FlatGridLayout.One) { }
-
-        public FlatGrid(int width, int height, FlatGridLayout layout)
+        public FlatGrid(int width, int height)
         {
             m_width = width;
             m_height = height;
-            Layout = layout;
             m_items = new T[width * height];
         }
 
@@ -44,16 +39,6 @@ namespace Grids
             Changed?.Invoke(x, y);
 
             return true;
-        }
-
-        public (int x, int y) Coordinate(Vector3 worldPosition)
-        {
-            return Layout.Coordinate(worldPosition);
-        }
-
-        public Vector3 WorldPosition(int x, int y)
-        {
-            return Layout.WorldPosition(x, y);
         }
 
         private bool IsValidCoordinate(int x, int y)

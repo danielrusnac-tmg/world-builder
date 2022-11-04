@@ -185,17 +185,12 @@ MonoBehaviour:
   m_width: 10
   m_height: 10
   m_layout:
-    CellSize: {x: 1, y: 1, z: 1}
+    CellSize: {x: 1, y: 1}
     Origin: {x: 0, y: 0, z: 0}
-    Orientation: 1
   m_grid:
     m_width: 10
     m_height: 10
     m_items: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-    Layout:
-      CellSize: {x: 1, y: 1, z: 1}
-      Origin: {x: -5, y: 0, z: -5}
-      Orientation: 1
 --- !u!4 &912075084
 Transform:
   m_ObjectHideFlags: 0

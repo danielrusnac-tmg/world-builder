@@ -1,6 +1,8 @@
 ﻿using System.Text;
-using UnityEditor;
 using UnityEngine;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 namespace Grids.Debuggers
 {
@@ -25,7 +27,7 @@ namespace Grids.Debuggers
 
         private void RegenerateGrid()
         {
-            m_grid = new FlatGrid<T>(m_width, m_height, new FlatGridLayout(m_layout.CellSize, m_layout.Origin, m_layout.Orientation, m_width, m_height));
+            m_grid = new FlatGrid<T>(m_width, m_height);
         }
 
         public void SetGrid(FlatGrid<T> grid)
@@ -40,6 +42,7 @@ namespace Grids.Debuggers
 
         private void DrawGridGizmo(FlatGrid<T> grid)
         {
+#if UNITY_EDITOR
             for (int x = 0; x < grid.Width; x++)
             {
                 for (int y = 0; y < grid.Height; y++)
@@ -48,11 +51,12 @@ namespace Grids.Debuggers
                     m_builder.AppendLine($"({x}, {y})");
                     m_builder.AppendLine(grid.Get(x, y).ToString());
 
-                    Vector3 cellPosition = grid.WorldPosition(x, y);
+                    Vector3 cellPosition = m_layout.WorldPosition(x, y);
                     Handles.Label(cellPosition, m_builder.ToString());
-                    Gizmos.DrawWireCube(cellPosition, grid.Layout.CellSize);
+                    Gizmos.DrawWireCube(cellPosition, new Vector3(m_layout.CellSize.x, 0f, m_layout.CellSize.y));
                 }
             }
+#endif
         }
     }
 }
