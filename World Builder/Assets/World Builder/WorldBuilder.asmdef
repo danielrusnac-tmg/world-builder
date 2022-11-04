@@ -1,0 +1,16 @@
+{
+    "name": "WorldBuilder",
+    "rootNamespace": "WorldBuilder",
+    "references": [
+        "GUID:66fff152b2b028840be172ab2624ee06"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
